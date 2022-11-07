@@ -29,6 +29,7 @@ development = os.environ.get('DEVELOPMENT', False)
 DEBUG = True
 
 ALLOWED_HOSTS = ['localhost']
+CSRF_TRUSTED_ORIGINS = ['https://8000-acegaz-gamehunter-pkgxu861c7s.ws-eu74.gitpod.io']
 
 
 # Application definition
@@ -104,9 +105,6 @@ LOGIN_REDIRECT_URL = '/'
 
 WSGI_APPLICATION = 'game_hunter.wsgi.application'
 
-CSRF_TRUSTED_ORIGINS = ['https://8000-acegaz-gamehunter-pkgxu861c7s.ws-eu72.gitpod.io']
-
-
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
@@ -163,9 +161,10 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-CSRF_TRUSTED_ORIGINS = ['https://8000-acegaz-gamehunter-pkgxu861c7s.ws-eu73.gitpod.io']
