@@ -89,11 +89,11 @@
                   Games
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#">PS4</a>
-                  <a class="dropdown-item" href="#">PS5</a>
-                  <a class="dropdown-item" href="#">Xbox 360</a>
-                  <a class="dropdown-item" href="#">Xbox series x</a>
-                  <a class="dropdown-item" href="#">Switch</a>
+                  <a class="dropdown-item" href="{% url 'products' %}?category=Games&platform=PS4">PS4</a>
+                  <a class="dropdown-item" href="{% url 'products' %}?category=Games&platform=PS5">PS5</a>
+                  <a class="dropdown-item" href="{% url 'products' %}?category=Games&platform=XBOX 360">Xbox 360</a>
+                  <a class="dropdown-item" href="{% url 'products' %}?category=Games&platform=XBOX SERIES X">Xbox series x</a>
+                  <a class="dropdown-item" href="{% url 'products' %}?category=Games&platform=SWITCH">Switch</a>
                 </div>
               </li>
             </ul>
@@ -107,7 +107,7 @@
                   Consoles
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#">PS4</a>
+                  <a class="dropdown-item" href="{% url 'products' %}?category=Consoles">PS4</a>
                   <a class="dropdown-item" href="#">PS5</a>
                   <a class="dropdown-item" href="#">Xbox 360</a>
                   <a class="dropdown-item" href="#">Xbox series x</a>
