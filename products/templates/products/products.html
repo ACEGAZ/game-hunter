@@ -8,7 +8,42 @@
   <div class="container-fluid text-light">
       <div class="row">
           <div class="col text-center mt-3">
-              <h2>Products</h2>
+            <!--Games h2-->
+            {% if '/products/?category=Games&platform=PS4' in request.get_full_path %}
+            <h2 style="color:rgb(4, 0, 255);">PS4 Games</h2>
+            {% elif '/products/?category=Games&platform=PS5' in request.get_full_path %}
+            <h2 style="color:rgb(4, 0, 255);">PS5 Games</h2>
+            {% elif '/products/?category=Games&platform=XBOX%20360' in request.get_full_path %}
+            <h2 style="color:rgb(64, 239, 6);">XBOX 360 Games</h2>
+            {% elif '/products/?category=Games&platform=XBOX%20SERIES%20X' in request.get_full_path %}
+            <h2 style="color:rgb(64, 239, 6);">Xbox Series X Games</h2>
+            {% elif '/products/?category=Games&platform=SWITCH' in request.get_full_path %}
+            <h2 style="color:rgb(239, 6, 6);">Switch Games</h2>
+            <!--Console h2-->
+            {% elif '/products/?category=Consoles&platform=PS4' in request.get_full_path %}
+            <h2 style="color:rgb(4, 0, 255);">PS4 Consoles</h2>
+            {% elif '/products/?category=Consoles&platform=PS5' in request.get_full_path %}
+            <h2 style="color:rgb(4, 0, 255);">PS5 Consoles</h2>
+            {% elif '/products/?category=Consoles&platform=XBOX%20360' in request.get_full_path %}
+            <h2 style="color:rgb(64, 239, 6);">XBOX 360 Consoles</h2>
+            {% elif '/products/?category=Consoles&platform=XBOX%20SERIES%20X' in request.get_full_path %}
+            <h2 style="color:rgb(64, 239, 6);">Xbox Series X Consoles</h2>
+            {% elif '/products/?category=Consoles&platform=SWITCH' in request.get_full_path %}
+            <h2 style="color:rgb(239, 6, 6);">Switch Consoles</h2>
+            <!--Accessories h2-->
+            {% elif '/products/?category=Accessories&platform=PS4' in request.get_full_path %}
+            <h2 style="color:rgb(4, 0, 255);">PS4 Accessories</h2>
+            {% elif '/products/?category=Accessories&platform=PS5' in request.get_full_path %}
+            <h2 style="color:rgb(4, 0, 255);">PS5 Accessories</h2>
+            {% elif '/products/?category=Accessories&platform=XBOX%20360' in request.get_full_path %}
+            <h2 style="color:rgb(64, 239, 6);">XBOX 360 Accessories</h2>
+            {% elif '/products/?category=Accessories&platform=XBOX%20SERIES%20X' in request.get_full_path %}
+            <h2 style="color:rgb(64, 239, 6);">Xbox Series X Accessories</h2>
+            {% elif '/products/?category=Accessories&platform=SWITCH' in request.get_full_path %}
+            <h2 style="color:rgb(239, 6, 6);">Switch Accessories</h2>
+            {% else %}
+            <h2>All Products</h2>
+            {% endif %}  
               <hr class="w-50 mb-1">
           </div>
       </div>

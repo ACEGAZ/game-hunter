@@ -4,7 +4,7 @@
 {% block content %}
 <div class="container mt-5 mb-5">
     <div class="row">
-        <div class="col-4 text-center">
+        <div class="col-sm-2 col-md-4 text-center">
             {% if product.image %}
             <a href="{{ product.image.url }}" target="_blank">
                 <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
@@ -16,7 +16,7 @@
             {% endif %}
         </div>
 
-        <div class="col-6 text-light text-center">
+        <div class="col-sm-10 col-md-8 text-light text-center">
             <p class="lead mb-0 font-weight-bold mt-5">{{ product.name }}</p>
             <hr>
             <p class="lead mb-0 font-weight-bold">{{ product.description }}</p>
