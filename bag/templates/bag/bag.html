@@ -8,7 +8,7 @@
     <div class="row justify-content-center">
         <h2>Loot</h2>
     </div>
-
+<hr>
     <div class="row justify-content-center">
         {% if bag_items %}
         <div class="table-responsive rounded">
@@ -18,4 +18,11 @@
         </div>
     </div>
 
+    <div class="row justify-content-center">
+        <a class="text-danger" href="{% url 'products' %}">
+            <p>Keep shopping</p>
+        </a>
+    </div>
+</div>
+<hr>
 {% endblock %}
