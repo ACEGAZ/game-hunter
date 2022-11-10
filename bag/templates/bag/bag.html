@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<!--image-->
+<div class="container-fluid text-light">
+    <hr>
+    <div class="row justify-content-center">
+        <h2>Loot</h2>
+    </div>
+
+    <div class="row justify-content-center">
+        {% if bag_items %}
+        <div class="table-responsive rounded">
+            {% else %}
+            <p>You have no loot</p>
+            {% endif %}
+        </div>
+    </div>
+
+{% endblock %}

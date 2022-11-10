@@ -13,6 +13,8 @@ def all_products(request):
     query = None
     categories = None
     platforms = None
+    sort = None
+    direction = None
 
     if request.GET:
 

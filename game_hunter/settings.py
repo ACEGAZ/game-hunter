@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'fontawesomefree',
     'home',
     'products',
+    'bag',
 ]
 
 MIDDLEWARE = [

@@ -57,8 +57,8 @@
           {% if user.is_superuser %}
           <a class="nav-item nav-link text-light" href="#">Add Product</a>
           {% endif%}
-          <a class="nav-item nav-link text-light" href="#">Loot</a>
-          <a class="nav-item nav-link text-light" href="#">
+          <a class="nav-item nav-link text-light" href="{% url 'bag_view' %}">Loot</a>
+          <a class="nav-item nav-link text-light" href="{% url 'bag_view' %}">
             <img src="{% static 'images/treasure-chest.png' %}" width="40" height="40">
           </a>
         </div>
