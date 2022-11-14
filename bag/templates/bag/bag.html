@@ -2,22 +2,57 @@
 {% load static %}
 
 {% block content %}
-<!--image-->
-<div class="container-fluid text-light">
+
+<div class="container text-light">
     <hr>
     <div class="row justify-content-center">
         <h2>Loot</h2>
     </div>
-<hr>
-    <div class="row justify-content-center">
-        {% if bag_items %}
-        <div class="table-responsive rounded">
-            {% else %}
-            <p>You have no loot</p>
-            {% endif %}
-        </div>
-    </div>
+    <hr>
 
+    <div class="row">
+        <div class="col">
+            {% if bag_items %}
+            <table class="table table-sm">
+                <thead class="text-light">
+                    <tr>
+                        <th scope="col">Games</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Platform</th>
+                        <th scope="col">Qty</th>
+                    </tr>
+                </thead>
+
+                {% for item in bag_items %}
+                <tr class="text-light">
+                    <td>
+                        <p class="mt-2">{{ item.product.name }}</p>
+                        <img src="{{ item.product.image.url}}" width="25%" height="25%" class="mb-5 mt-2">
+                    </td>
+                    <td class="mt-5">
+                        <p>{{ item.product.description }}</p>
+                    </td>
+                    <td class="mt-5">
+                        <p>{{ item.product.price }}</p>
+                    </td>
+                    <td class="mt-5">
+                        <p>{{ item.product.platform }}</p>
+                    </td>
+                    <td class="mt-5">
+                        <p>{{ item.quantity }}</p>
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        {% else %}
+        <p>You have no loot</p>
+        {% endif%}
+    </div>
+</div>
+
+<div class="container">
     <div class="row justify-content-center">
         <a class="text-danger" href="{% url 'products' %}">
             <p>Keep shopping</p>
@@ -25,4 +60,4 @@
     </div>
 </div>
 <hr>
-{% endblock %}
+{% endblock %} -->
