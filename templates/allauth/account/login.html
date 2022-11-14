@@ -37,7 +37,7 @@
 <div class="container-fluid">
   <div class="row justify-content-center text-light">
     <p>{% blocktrans %}If you have not created an account yet, then please
-      <a class="text-danger" href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
+      <a class="text-primary" href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
   </div>
 </div>
 <hr>
@@ -53,7 +53,7 @@
       {% endif %}
       <button class="primaryAction" type="submit">{% trans "Log In" %}</button>
       <hr>
-      <a class="button secondaryAction text-danger" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
+      <a class="button secondaryAction text-primary" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
       <hr>
     </form>
   </div>

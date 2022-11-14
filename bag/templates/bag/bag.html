@@ -16,11 +16,11 @@
             <table class="table table-sm">
                 <thead class="text-light">
                     <tr>
-                        <th scope="col">Games</th>
-                        <th scope="col">Description</th>
-                        <th scope="col">Price</th>
-                        <th scope="col">Platform</th>
-                        <th scope="col">Qty</th>
+                        <th>Games</th>
+                        <th>Description</th>
+                        <th>Price</th>
+                        <th class="text-center">Platform</th>
+                        <th>Qty</th>
                     </tr>
                 </thead>
 
@@ -29,35 +29,67 @@
                     <td>
                         <p class="mt-2">{{ item.product.name }}</p>
                         <img src="{{ item.product.image.url}}" width="25%" height="25%" class="mb-5 mt-2">
+                        <h6>
+                        <a class="text-uppercase text-danger" href="{% url 'adjust_bag' item.item_id%}">Remove from your loot</a>
+                        </h6>
                     </td>
                     <td class="mt-5">
                         <p>{{ item.product.description }}</p>
                     </td>
                     <td class="mt-5">
-                        <p>{{ item.product.price }}</p>
+                        <p>£{{ item.product.price }}</p>
                     </td>
-                    <td class="mt-5">
+                    <td class="mt-5 text-center">
                         <p>{{ item.product.platform }}</p>
                     </td>
-                    <td class="mt-5">
+                    <td class="mt-5 text-center">
                         <p>{{ item.quantity }}</p>
                     </td>
                 </tr>
                 {% endfor %}
             </table>
         </div>
-        {% else %}
-        <p>You have no loot</p>
-        {% endif%}
+
+        <div>
+            {% else %}
+            <h6 class="text-center mb-5">You have no loot</h6>
+            {% endif%}
+        </div>
     </div>
 </div>
 
 <div class="container">
     <div class="row justify-content-center">
-        <a class="text-danger" href="{% url 'products' %}">
-            <p>Keep shopping</p>
+        <a class="text-primary" href="{% url 'products' %}">
+            <h6 class="text-uppercase">Keep shopping</h6>
+        </a>
+        <a href="" class="text-light ml-5">
+            <h6><span class="text-uppercase">Secure Checkout</span><span class="icon"> <i
+                        class="fas fa-lock"></i></span></h6>
         </a>
     </div>
 </div>
 <hr>
+
+<script type="text/javascript">
+// Increment quantity
+    $('.increment-qty').click(function(e) {
+       e.preventDefault();
+       var closestInput = $(this).closest('.input-group').find('.qty_input')[0];
+       var currentValue = parseInt($(closestInput).val());
+       $(closestInput).val(currentValue + 1);
+       var itemId = $(this).data('item_id');
+       handleEnableDisable(itemId);
+    });
+
+    // Decrement quantity
+    $('.decrement-qty').click(function(e) {
+       e.preventDefault();
+       var closestInput = $(this).closest('.input-group').find('.qty_input')[0];
+       var currentValue = parseInt($(closestInput).val());
+       $(closestInput).val(currentValue - 1);
+       var itemId = $(this).data('item_id');
+       handleEnableDisable(itemId);
+    });
+</script>
 {% endblock %} -->
