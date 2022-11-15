@@ -66,7 +66,8 @@
               {% endif %}
             </p>
           </a>
-          <a  href="{% url 'bag_view' %}"><img id="bag-image" src="{% static 'images/treasure-chest.png' %}" width="40" height="40"></a>
+          <a href="{% url 'bag_view' %}"><img id="bag-image" src="{% static 'images/treasure-chest.png' %}" width="40"
+              height="40"></a>
         </div>
       </div>
     </nav>
@@ -337,6 +338,21 @@
       <!-- Copyright -->
     </footer>
     <!-- Footer -->
+
+    {% if messages %}
+    <div class="message-container">
+      {% for message in messages %}
+      {% include 'includes/toasts/toast_success.html'%}
+      {% endfor %}
+    </div>
+    {% endif %}
+
+
+    {% block postloadjs %}
+    <script type="text/javascript">
+      $('.toast').toast('show');
+    </script>
+    {% endblock %}
 </body>
 
 </html>

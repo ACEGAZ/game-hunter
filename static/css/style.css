@@ -43,3 +43,10 @@ body {
 #bag-image {
     margin-left: 8px;
 }
+
+.message-container {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    z-index: 999999999;
+}
