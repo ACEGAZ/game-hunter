@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from products.models import Products
 
@@ -14,11 +14,10 @@ def bag_view(request):
 def add_to_bag(request, item_id):
     """add item quantity to bag"""
 
-    product = Products.objects.get(pk=item_id)
-
+    product = get_object_or_404(Products, pk=item_id)
+    bag = request.session.get('bag', {})
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
-    bag = request.session.get('bag', {})
 
     if item_id in list(bag.keys()):
         bag[item_id] += quantity
@@ -35,31 +34,38 @@ def adjust_bag(request, item_id):
     """
     Adjust the quantity of the specified product
     """
+    product = get_object_or_404(Products, pk=item_id)
     bag = request.session.get('bag', {})
     quantity = bag[item_id] - 1
 
     if quantity > 0:
         bag[item_id] = quantity
+        messages.success(request, f'removed {product.name} from your loot')
     else:
         bag.pop(item_id)
-    request.session['bag'] = bag
+        messages.success(request, f'removed {product.name} from your loot')
     if not bag:
+        messages.success(request, f'removed {product.name} from your loot')
         return redirect(reverse('bag_view'))
+    request.session['bag'] = bag
     return redirect(reverse('bag_view'))
 
 
 def remove_from_bag(request, item_id):
     """
-    Adjust the quantity of the specified product
+    remove the quantity of the specified product
     """
+    product = get_object_or_404(Products, pk=item_id)
     bag = request.session.get('bag', {})
     quantity = bag[item_id] - 99
 
     if quantity > 0:
         bag[item_id] = quantity
+        messages.success(request, f'removed all{product.name} from your loot')
     else:
         bag.pop(item_id)
-    request.session['bag'] = bag
+        messages.success(request, f'removed all {product.name} from your loot')
     if not bag:
         return redirect(reverse('bag_view'))
     return redirect(reverse('bag_view'))
+

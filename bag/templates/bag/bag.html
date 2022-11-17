@@ -29,12 +29,16 @@
                     <td>
                         <p class="mt-2">{{ item.product.name }}</p>
                         <img src="{{ item.product.image.url}}" width="25%" height="25%" class="mb-5 mt-2">
+                        <div class="row">
                         <h6>
                         <a class="text-uppercase text-danger" href="{% url 'adjust_bag' item.item_id%}">Drop 1 from your loot</a>
                         </h6>
+                    </div>
+                    <div class="row">
                         <h6>
                             <a class="text-uppercase text-danger" href="{% url 'remove_from_bag' item.item_id%}">Drop all from your loot</a>
                             </h6>
+                        </div>
                     </td>
                     <td class="mt-5">
                         <p>{{ item.product.description }}</p>

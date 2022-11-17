@@ -115,3 +115,5 @@ Happy coding!
 DO NOT DELETE
 background image source
 https://arstechnica.com/gaming/2020/12/ars-technicas-best-games-of-2020/
+
+removing products not displaying toasts
