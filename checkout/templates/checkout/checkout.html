@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="container text-light">
+    <hr>
+    <div class="row justify-content-center">
+        <h2>Checkout</h2>
+    </div>
+    <hr>
+
+    <div class="col text-center">
+        <p>Please fill in the form to complete your order</p>
+    </div>
+    <hr>
+    <div class="row justify-content-center">
+        {{ order_form.first_name }}
+    </div>
+    <hr>
+    <div class="row justify-content-center">
+        {{ order_form.last_name }}
+    </div>
+</div>
+<hr>
+<div class="container">
+    <div class="row justify-content-center">
+        <a class="text-primary" href="{% url 'products' %}">
+            <h6 class="text-uppercase">Back to store</h6>
+    </div>
+</div>
+<hr>
+
+
+{% block postloadjs %}
+{% endblock %}
+{% endblock %}

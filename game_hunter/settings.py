@@ -29,7 +29,7 @@ development = os.environ.get('DEVELOPMENT', False)
 DEBUG = True
 
 ALLOWED_HOSTS = ['localhost']
-CSRF_TRUSTED_ORIGINS = ["https://8000-acegaz-gamehunter-pkgxu861c7s.ws-eu75.gitpod.io"]
+CSRF_TRUSTED_ORIGINS = ["https://8000-acegaz-gamehunter-pkgxu861c7s.ws-eu74.gitpod.io"]
 
 
 # Application definition

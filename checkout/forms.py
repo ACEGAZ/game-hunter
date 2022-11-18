@@ -22,17 +22,18 @@ class OrderForm(forms.ModelForm):
         """
         super().__init__(*args, **kwargs)
         placeholders = {
-            'full_name': 'Full Name',
+            'first_name': 'First name',
+            'last_name': 'Last name',
             'email': 'Email Address',
             'phone_number': 'Phone Number',
-            'postcode': 'Post Code',
+            'post_code': 'Post Code',
             'town_or_city': 'Town or City',
-            'street_address1': 'Street Address 1',
-            'street_address2': 'Street Address 2',
+            'street_address_1': 'Street Address 1',
+            'street_address_2': 'Street Address 2',
             'county': 'County',
         }
 
-        self.fields['full_name'].widget.attrs['autofocus'] = True
+        self.fields['first_name'].widget.attrs['autofocus'] = True
         for field in self.fields:
             if field != 'county':
                 if self.fields[field].required:
