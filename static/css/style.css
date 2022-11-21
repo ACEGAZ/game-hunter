@@ -50,3 +50,7 @@ body {
     right: 0px;
     z-index: 999999999;
 }
+
+#submit-button:hover span {
+    text-decoration: underline;
+}
