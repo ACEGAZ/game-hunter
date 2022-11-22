@@ -68,4 +68,3 @@ def remove_from_bag(request, item_id):
     if not bag:
         return redirect(reverse('bag_view'))
     return redirect(reverse('bag_view'))
-

@@ -27,8 +27,7 @@ class Order(models.Model):
 
     def update_total(self):
         """
-        Update grand total each time a line item is added,
-        accounting for delivery costs.
+        Update grand total each time a line item is added.
         """
         self.order_total = self.order_items.aggregate
         (Sum('order_item_total'))['order_item_total__sum'] or 0

@@ -3,7 +3,6 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-
 <div class="container text-light">
     <hr>
     <div class="row justify-content-center">
@@ -19,7 +18,7 @@
     <form action="{% url 'checkout' %}" method="POST">
         {% csrf_token %}
         <div class="row justify-content-center">
-            <fieldset class="w-25">
+            <fieldset class="w-50">
                 <legend class="fieldset-label small text-light px-2 text-center">Details</legend>
                 {{ order_form.first_name | as_crispy_field }}
                 {{ order_form.last_name | as_crispy_field }}
@@ -28,7 +27,7 @@
         </div>
 
         <div class="row justify-content-center">
-            <fieldset class="w-25">
+            <fieldset class="w-50">
                 <legend class="fieldset-label small text-light px-2 text-center">Delivery</legend>
                 {{ order_form.phone_number | as_crispy_field }}
                 {{ order_form.street_address_1 | as_crispy_field }}
@@ -40,12 +39,14 @@
         </div>
 
         <div class="row justify-content-center">
-            <fieldset class="w-25">
+            <fieldset class="w-50">
                 <legend class="fieldset-label small text-light px-2 text-center">Payment</legend>
                 <!-- stripe card element-->
-                <div></div>
+                    <div id="card-element"></div>
+            
+               
                 <!-- stripe error card element-->
-                <div></div>
+                <div id="card-errors"></div>
             </fieldset>
         </div>
         <div class="row justify-content-center">
@@ -82,6 +83,13 @@
 <hr>
 
 
-{% block postloadjs %}
+{{ block.super }}
+    {{ stripe_public_key|json_script:"id_stripe_public_key" }}
+    {{ client_secret|json_script:"id_client_secret" }}
+    <script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
 {% endblock %}
-{% endblock %}
+
+
+
+
+

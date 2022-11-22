@@ -29,7 +29,7 @@ development = os.environ.get('DEVELOPMENT', False)
 DEBUG = True
 
 ALLOWED_HOSTS = ['localhost']
-CSRF_TRUSTED_ORIGINS = ["https://8000-acegaz-gamehunter-pkgxu861c7s.ws-eu74.gitpod.io"]
+CSRF_TRUSTED_ORIGINS = ["https://8000-acegaz-gamehunter-pkgxu861c7s.ws-eu77.gitpod.io"]
 
 
 # Application definition
@@ -174,3 +174,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# stripe
+STRIPE_CURRENCY = 'gbp'
+STRIPE_PUBLIC_KEY = os.environ.get('STRIPE_PUBLIC_KEY', '')
+STRIPE_SECRET_KEY = os.environ.get('STRIPE_SECRET_KEY', '')

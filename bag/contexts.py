@@ -20,9 +20,12 @@ def bag_contents(request):
             'product': product,
         })
 
+    order_total = total
+
     context = {
         'bag_items': bag_items,
         'total': total,
+        'order_total': order_total,
         'product_count': product_count,
     }
 
