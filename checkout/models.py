@@ -10,7 +10,7 @@ class Order(models.Model):
     first_name = models.CharField(null=False, blank=False, max_length=50)
     last_name = models.CharField(null=False, blank=False, max_length=50)
     email = models.EmailField(blank=False, null=False, max_length=254)
-    phone_number = models.CharField(blank=False, null=False, unique=True,
+    phone_number = models.CharField(blank=False, null=False,
                                     max_length=20)
     street_address_1 = models.CharField(blank=False, null=False, max_length=80)
     street_address_2 = models.CharField(blank=True, null=True, max_length=80)
@@ -21,7 +21,7 @@ class Order(models.Model):
     order_total = models.DecimalField(max_digits=10, decimal_places=2,
                                       null=False, default=0)
 
-    def generate_order_number(self):
+    def _generate_order_number(self):
         """ generate unique order number using UUID """
         return uuid.uuid4().hex.upper()
 
@@ -29,8 +29,7 @@ class Order(models.Model):
         """
         Update grand total each time a line item is added.
         """
-        self.order_total = self.order_items.aggregate
-        (Sum('order_item_total'))['order_item_total__sum'] or 0
+        self.order_total = self.order_items.aggregate(Sum('order_item_total'))['order_item_total__sum'] or 0
         self.order_total
         self.save()
 
@@ -56,7 +55,7 @@ class OrderItem(models.Model):
                               related_name='order_items')
     product = models.ForeignKey(Products, blank=False, null=False,
                                 on_delete=models.CASCADE)
-    qauntity = models.IntegerField(null=False, blank=False, default=0)
+    quantity = models.IntegerField(null=False, blank=False, default=0)
     order_item_total = models.DecimalField(max_digits=6, decimal_places=2,
                                            blank=False, null=False,
                                            editable=False)
