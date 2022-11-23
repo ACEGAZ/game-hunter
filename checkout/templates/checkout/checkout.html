@@ -15,7 +15,7 @@
     </div>
     <hr>
 
-    <form action="{% url 'checkout' %}" method="POST">
+    <form action="{% url 'checkout' %}" method="POST" id="payment-form">
         {% csrf_token %}
         <div class="row justify-content-center">
             <fieldset class="w-50">
