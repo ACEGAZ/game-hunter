@@ -4,7 +4,6 @@
 
 {% block content %}
 <div class="container text-light">
-    <hr>
     <div class="row justify-content-center">
         <h2>Checkout</h2>
     </div>
@@ -13,6 +12,74 @@
     <div class="col text-center">
         <p>Thank you for your order.</p>
         <p>Below is your order summary and a confiramtion email has been sent to <strong>{{ order.email }}</strong></p>
+    </div>
+</div>
+<hr>
+<div class="container text-light">
+    <div class="row justify-content-center">
+        <h3>Order Details</h3>
+    </div>
+    <div class="row justify-content-center">
+        <h6>Order Number</h6>
+    </div>
+    <div class="row justify-content-center">
+        <p>{{ order.order_number }}</p>
+    </div>
+    <div class="row justify-content-center">
+        <h6>Order Date</h6>
+    </div>
+    <div class="row justify-content-center">
+        <p>{{ order.date }}</p>
+    </div>
+    <div class="row justify-content-center">
+        <h6>Order Items</h6>
+    </div>
+    {% for item in order.order_items.all %}
+    <div class="row justify-content-center">
+        <p>{{ item.product.name }}</p>
+    </div>
+    <div class="row justify-content-center">
+        <p class="small mb-0">{{ item.quantity }} at £{{ item.product.price }} each</p>
+    </div>
+    <hr>
+    {% endfor %}
+    <hr>
+    <div class="row justify-content-center">
+        <h3>Delivering To</h3>
+    </div>
+    <div class="row justify-content-center">
+        <p>{{ order.first_name }} {{ order.last_name }}</p>
+    </div>
+    <div class="row justify-content-center">
+        <p>{{ order.phone_number }}</p>
+    </div>
+    <div class="row justify-content-center">
+        <p>{{ order.street_address_1 }}</p>
+    </div>
+    {% if order.street_address_2 %}
+    <div class="row justify-content-center">
+        <p>{{ order.street_address_2 }}</p>
+    </div>
+    {% endif %}
+    <div class="row justify-content-center">
+        <p>{{ order.town_or_city }}</p>
+    </div>
+    {% if order.county %}
+    <div class="row justify-content-center">
+        <p>{{ order.county }}</p>
+    </div>
+    {% endif %}
+    {% if order.postcode %}
+    <div class="row justify-content-center">
+        <p>{{ order.post_code }}</p>
+    </div>
+    {% endif %}
+    <hr>
+    <div class="row justify-content-center">
+        <h3>Order Total</h3>
+    </div>
+    <div class="row justify-content-center">
+        <p>£{{ order.order_total }}</p>
     </div>
 </div>
 
