@@ -4,7 +4,7 @@ from django.db import models
 
 PS4 = 'PS4'
 PS5 = 'PS5'
-XBOX_360 = 'XBOX 360'
+XBOX_ONE = 'XBOX ONE'
 XBOX_SERIES_X = 'XBOX SERIES X'
 SWITCH = 'SWITCH'
 
@@ -23,7 +23,7 @@ class Products(models.Model):
     PLATFORM_CHOICES = (
                        (PS4, "PS4"),
                        (PS5, "PS5"),
-                       (XBOX_360, "XBOX 360"),
+                       (XBOX_ONE, "XBOX ONE"),
                        (XBOX_SERIES_X, "XBOX SERIES X"),
                        (SWITCH, "SWITCH"),
                        )
