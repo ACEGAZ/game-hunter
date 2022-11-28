@@ -40,10 +40,16 @@ class OrderAdmin(admin.ModelAdmin):
         'post_code',
         'date',
         'order_total',
+        'original_bag',
+        'stripe_pid',
     )
 
-    readonly_fields = ('order_number', 'date',
-                       'order_total',)
+    readonly_fields = ('order_number',
+                       'date',
+                       'order_total',
+                       'original_bag',
+                       'stripe_pid',
+                       )
 
     ordering = ('-date',)
 
