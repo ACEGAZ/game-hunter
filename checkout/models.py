@@ -3,10 +3,14 @@ from django.db import models
 from django.db.models import Sum
 from django.conf import settings
 from products.models import Products
+from profiles.models import UserProfile
 
 
 class Order(models.Model):
     order_number = models.CharField(null=False, editable=False, max_length=32)
+    user_profile = models.ForeignKey(UserProfile, on_delete=models.SET_NULL,
+                                     null=True, blank=True,
+                                     related_name='orders')
     first_name = models.CharField(null=False, blank=False, max_length=50)
     last_name = models.CharField(null=False, blank=False, max_length=50)
     email = models.EmailField(blank=False, null=False, max_length=254)
@@ -21,7 +25,8 @@ class Order(models.Model):
     order_total = models.DecimalField(max_digits=10, decimal_places=2,
                                       null=False, default=0)
     original_bag = models.TextField(null=False, blank=False, default='')
-    stripe_pid = models.CharField(max_length=254, null=False, blank=False, default='')
+    stripe_pid = models.CharField(max_length=254, null=False, blank=False,
+                                  default='')
 
     def _generate_order_number(self):
         """ generate unique order number using UUID """
