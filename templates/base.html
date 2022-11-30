@@ -97,7 +97,7 @@
                 <a class="dropdown-item" href="{% url 'account_signup' %}">Sign Up</a>
                 {% endif %}
             </li>
-            <a class="nav-item nav-link text-light">
+            <a href="{% url 'bag_view' %}" class="nav-item nav-link text-light">
               <p>
                 {% if total %}
                 £{{ total|floatformat:2 }}

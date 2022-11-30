@@ -12,7 +12,19 @@
 </div>
 <hr>
 
-<div class="row justify-content-center text-light">
-{{ profile }}
+<div class="container text-light">
+    <div class="row text-light">
+        <div class="col-12 col-lg-6">
+            <h3 class="text-light text-center">Default delivery information</h3>
+            <form class="mt-3 mb-3 text-center" action="{% url 'profile' %}" method="POST" id="profile-update-form">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <button class="btn text-uppercase text-primary" id="profile-update-button">Update Information</button>
+        </div>
+        <div class="col-12 col-lg-6">
+            <h3 class="text-light text-center">Order History</h3>
+            <p class="text-center">{{ orders }}</p>
+        </div>
+    </div>
 </div>
 {% endblock %}
