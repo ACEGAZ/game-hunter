@@ -96,3 +96,8 @@ body {
 #profile-update-button:hover{
 text-decoration: underline;
 }
+
+.order-history {
+    max-height: 416px;
+    overflow-y: auto;
+}

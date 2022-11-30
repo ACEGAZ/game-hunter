@@ -83,17 +83,25 @@
     </div>
 </div>
 
-<hr>
-    <div class="container">
-        <div class="row justify-content-center">
-            <a class="text-primary" href="{% url 'products' %}">
-                <h6 class="text-uppercase">Back to store</h6>
-        </div>
+{% if from_profile %}
+<div class="container">
+    <div class="row justify-content-center">
+        <a href="{% url 'profile' %}" class="btn text-primary my-2">
+            <span class="icon mr-2 text-center">
+            </span>
+            <span class="text-uppercase">Back to Profile</span>
+        </a>
     </div>
 </div>
+{% else %}
+
+<hr>
+<div class="container">
+    <div class="row justify-content-center">
+        <a class="text-primary" href="{% url 'products' %}">
+            <h6 class="text-uppercase">Back to store</h6>
+    </div>
+</div>
+</div>
+{% endif %}
 {% endblock %}
-
-
-
-
-
