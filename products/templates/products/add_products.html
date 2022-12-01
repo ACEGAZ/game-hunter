@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class="container-fluid">
+    <div class="row text-light justify-content-center mb-5">
+        <h2>Product Managment</h2>
+    </div>
+    <div class="row text-light justify-content-center mb-5">
+        <h4>Add a product</h4>
+    </div>
+    <div class="row text-light justify-content-center">
+        <form class="form w-50 text-center" action="{% url 'add_products' %}" method="POST"
+            enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form | crispy }}
+    </div>
+    <div class="row">
+        <div class="col text-right">
+            <button class="text-danger btn btn-black btn-lg">
+            <a href="{% url 'home' %}" class="text-danger justify-content-end">Cancel</a>
+        </button>
+        </div>
+        <div class="col text-danger justify-content-start mb-5">
+            <button value="submit" type="submit" class="text-primary btn btn-black btn-lg" id="add-products-submit">Submit</button>
+        </div>
+    </div>
+</form>
+</div>
+
+{% endblock %}
