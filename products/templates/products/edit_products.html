@@ -9,10 +9,10 @@
         <h2>Product Managment</h2>
     </div>
     <div class="row text-light justify-content-center mb-5">
-        <h4>Add a product</h4>
+        <h4>Edit a product</h4>
     </div>
     <div class="row text-light justify-content-center">
-        <form class="form w-50 text-center" action="{% url 'add_products' %}" method="POST"
+        <form class="form w-50 text-center" action="{% url 'edit_products' product.id %}" method="POST"
             enctype="multipart/form-data">
             {% csrf_token %}
             {{ form | crispy }}
@@ -24,7 +24,7 @@
         </button>
         </div>
         <div class="col text-danger justify-content-start mb-5">
-            <button value="submit" type="submit" class="text-primary btn btn-black btn-lg add-products-submit">Add Product</button>
+            <button value="submit" type="submit" class="text-primary btn btn-black btn-lg add-products-submit">Update Product</button>
         </div>
     </div>
 </form>

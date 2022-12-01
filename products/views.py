@@ -80,3 +80,27 @@ def add_product(request):
     }
 
     return render(request, template, context)
+
+
+def edit_product(request, product_id):
+    """for superusers to edit products in the store """
+    product = get_object_or_404(Products, pk=product_id)
+    if request.method == 'POST':
+        form = ProductsForm(request.POST, request.FILES, instance=product)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully edited product!')
+            return redirect(reverse('product_detail', args=[product.id]))
+        else:
+            messages.error(request, 'Failed to edit product. Please ensure the form is valid.')
+    else:
+        form = ProductsForm(instance=product)
+        messages.info(request, f'You are editing {product.name}')
+
+    template = 'products/edit_products.html'
+    context = {
+        'form': form,
+        'product': product
+    }
+
+    return render(request, template, context)

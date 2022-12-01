@@ -109,7 +109,7 @@ body {
     overflow-y: auto;
 }
 
-#add-products-submit:hover {
+.add-products-submit:hover {
     text-decoration: underline;
     opacity:0.6
 }
