@@ -119,6 +119,9 @@ https://arstechnica.com/gaming/2020/12/ars-technicas-best-games-of-2020/
 
 removing products not displaying toasts
 
+trying to access add, update and delete product views via url not displaying error toast 
+
 sort bar not working
 
 Webhooks not working (401 (Unauthorized))
+
