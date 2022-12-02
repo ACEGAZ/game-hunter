@@ -1,0 +1,1 @@
+web: gunicorn game_hunter.wsgi:application
