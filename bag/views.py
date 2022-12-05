@@ -35,18 +35,16 @@ def adjust_bag(request, item_id):
     Adjust the quantity of the specified product
     """
     product = get_object_or_404(Products, pk=item_id)
+    quantity = int(request.POST.get('quantity'))
     bag = request.session.get('bag', {})
-    quantity = bag[item_id] - 1
 
     if quantity > 0:
         bag[item_id] = quantity
-        messages.success(request, f'removed {product.name} from your loot')
+        messages.success(request, f'Updated {product.name} quantity to {bag[item_id]}')
     else:
         bag.pop(item_id)
-        messages.success(request, f'removed {product.name} from your loot')
-    if not bag:
-        messages.success(request, f'removed {product.name} from your loot')
-        return redirect(reverse('bag_view'))
+        messages.success(request, f'Removed {product.name} from your bag')
+
     request.session['bag'] = bag
     return redirect(reverse('bag_view'))
 

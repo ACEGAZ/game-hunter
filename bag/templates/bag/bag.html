@@ -3,64 +3,62 @@
 
 {% block content %}
 
-<div class="container text-light">
+<div class="container">
     <hr>
-    <div class="row justify-content-center">
+    <div class="row text-light justify-content-center">
         <h2>Loot</h2>
     </div>
     <hr>
-
-    <div class="row">
-        <div class="col">
-            {% if bag_items %}
-            <table class="table table-sm">
-                <thead class="text-light">
-                    <tr>
-                        <th>Games</th>
-                        <th>Description</th>
-                        <th>Price</th>
-                        <th class="text-center">Platform</th>
-                        <th>Qty</th>
-                    </tr>
-                </thead>
-
-                {% for item in bag_items %}
-                <tr class="text-light">
-                    <td>
-                        <p class="mt-2">{{ item.product.name }}</p>
-                        <img src="{{ item.product.image.url}}" width="25%" height="25%" class="mb-5 mt-2">
-                        <div class="row">
-                        <h6>
-                        <a class="text-uppercase text-danger" href="{% url 'adjust_bag' item.item_id%}">Drop 1 from your loot</a>
-                        </h6>
-                    </div>
-                    <div class="row">
-                        <h6>
-                            <a class="text-uppercase text-danger" href="{% url 'remove_from_bag' item.item_id%}">Drop all from your loot</a>
-                            </h6>
-                        </div>
-                    </td>
-                    <td class="mt-5">
-                        <p>{{ item.product.description }}</p>
-                    </td>
-                    <td class="mt-5">
-                        <p>£{{ item.product.price }}</p>
-                    </td>
-                    <td class="mt-5 text-center">
-                        <p>{{ item.product.platform }}</p>
-                    </td>
-                    <td class="mt-5 text-center">
-                        <p>{{ item.quantity }}</p>
-                    </td>
+    <div class="row-12 justify-content-center">
+        {% if bag_items %}
+        <table class="table table-sm">
+            <thead class="text-light">
+                <tr>
+                    <th>Games</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th class="text-center">Platform</th>
+                    <th class="text-center">Qty</th>
                 </tr>
-                {% endfor %}
-            </table>
-        </div>
+            </thead>
 
-        <div>
+            {% for item in bag_items %}
+            <tr class="text-light">
+                <td>
+                    <p>{{ item.product.name }}</p>
+                    <img src="{{ item.product.image.url}}" width="25%" height="25%" class="mb-5 mt-2">
+                </td>
+                <td class="mt-5">
+                    <p>{{ item.product.description }}</p>
+                </td>
+                <td class="mt-5">
+                    <p>£{{ item.product.price }}</p>
+                </td>
+                <td class="mt-5 text-center">
+                    <p>{{ item.product.platform }}</p>
+                </td>
+                <td class="mt-5 text-center">
+                    <form class="form update-form" method="POST" action="{% url 'adjust_bag' item.item_id %}">
+                        {% csrf_token %}
+                        <input class="form-control form-control-sm qty_input text-center" type="number"
+                        name="quantity" value="{{ item.quantity }}" min="1" max="99"
+                        data-item_id="{{ item.item_id }}"
+                        id="id_qty_{{ item.item_id }}">
+                    </form>
+                    <div class="row-12">
+                        <a class="update-link text-primary"><small>Update</small></a>
+                    </div>
+                    <div class="row-12">
+                        <a class="remove-item text-danger" id="remove_{{ item.item_id }}"><small>Remove</small>
+                    </div>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+        <div class="row">
             {% else %}
-            <h6 class="text-center mb-5">Your loot bag is empty</h6>
-            {% endif%}
+            <h6 class="mb-5 text-light text-center">Your loot bag is empty</h6>
+            {% endif %}
         </div>
     </div>
 </div>
@@ -72,13 +70,33 @@
         </a>
         <a href="{% url 'checkout' %}" class="text-light ml-5">
             <h6><span class="text-uppercase">Secure Checkout</span><span class="icon"> <i
-                        class="fas fa-lock"></i></span></h6>
+                        class="fas fa-lock"></i></span>
+            </h6>
         </a>
     </div>
 </div>
 <hr>
 
+<script type="text/javascript">
 
-{% block postloadjs %}
+$('.update-link').click(function(e) {
+        var form = $(this).prev('.update-form');
+        form.submit();
+    })
+
+    // Remove item and reload on click
+    $('.remove-item').click(function (e) {
+        var csrfToken = "{{ csrf_token }}";
+        var itemId = $(this).attr('id').split('remove_')[1];
+        var url = `/bag/remove/${itemId}/`;
+        var data = {
+            'csrfmiddlewaretoken': csrfToken,
+        };
+
+        $.post(url, data)
+            .done(function () {
+                location.reload();
+            });
+    })
+</script>
 {% endblock %}
-{% endblock %} -->
