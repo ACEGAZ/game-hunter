@@ -55,13 +55,6 @@
   </div>
   {% endif %}
 
-
-  {% block postloadjs %}
-  <script type="text/javascript">
-    $('.toast').toast('show');
-  </script>
-  {% endblock %}
-
   <title>Game Hunter</title>
 </head>
 
@@ -385,6 +378,12 @@
     <!-- Footer -->
     <script src="https://use.fontawesome.com/74287a9521.js"></script>
     <script src="https://kit.fontawesome.com/e81d17d39f.js" crossorigin="anonymous"></script>
+    
+    {% block postloadjs %}
+  <script type="text/javascript">
+    $('.toast').toast('show');
+  </script>
+  {% endblock %}
 </body>
 
 </html>
