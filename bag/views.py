@@ -59,10 +59,10 @@ def remove_from_bag(request, item_id):
 
     if quantity > 0:
         bag[item_id] = quantity
-        messages.success(request, f'removed all{product.name} from your loot')
+        messages.success(request, f'removed {product.name} from your loot')
     else:
         bag.pop(item_id)
-        messages.success(request, f'removed all {product.name} from your loot')
+        messages.success(request, f'removed {product.name} from your loot')
     if not bag:
         return redirect(reverse('bag_view'))
     return redirect(reverse('bag_view'))
