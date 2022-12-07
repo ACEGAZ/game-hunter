@@ -32,6 +32,7 @@
                 <p class="text-center">
                     Date added: {{ review.date_added }}
                 </p>
+                <a href="{% url 'edit_review' review.id %}">Edit</a>
                 </div>
             </div>
         </div>
