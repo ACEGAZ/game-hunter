@@ -123,3 +123,7 @@ trying to access add, update and delete product views via url not displaying err
 
 Webhooks not working (401 (Unauthorized))
 
+add ability for admin to look at reviews before published
+
+update button on bag not working
+

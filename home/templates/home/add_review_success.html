@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <div class="row text-light justify-content-center">
+        <h2>Thanks for your review!</h2>
+    </div>
+    <hr>
+    <div class="row text-light justify-content-center">
+        <p>Your review will be displayed on our home page</p>
+    </div>
+    <div class="row text-light justify-content-center">
+        <a href="{% url 'home' %}" class="text-primary">Back To Store</a>
+    </div>
+</div>
+    <hr>
+    {% endblock %}
