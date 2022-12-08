@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Order, OrderItem
+from .models import Order, OrderItem, Feedback
 # Register your models here.
 
 
@@ -55,4 +55,29 @@ class OrderAdmin(admin.ModelAdmin):
     ordering = ('-date',)
 
 
+class FeedbackAdmin(admin.ModelAdmin):
+    model = Feedback
+
+    fields = (
+        'delivery_time',
+        'website',
+        'checkout',
+    )
+
+    list_display = (
+        'delivery_time',
+        'website',
+        'checkout',
+    )
+
+    readonly_fields = (
+        'delivery_time',
+        'website',
+        'checkout',
+    )
+
+    ordering = ('-date',)
+
+
 admin.site.register(Order, OrderAdmin)
+admin.site.register(Feedback, FeedbackAdmin)

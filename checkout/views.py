@@ -4,8 +4,8 @@ from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
 
-from .forms import OrderForm
-from .models import Order, OrderItem
+from .forms import OrderForm, FeedbackForm
+from .models import Order, OrderItem, Feedback
 
 from products.models import Products
 from profiles.models import UserProfile
@@ -175,3 +175,31 @@ def checkout_success(request, order_number):
     }
 
     return render(request, template, context)
+
+
+def feedback_view(request):
+
+    if request.method == 'POST':
+        form = FeedbackForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Thanks for your feedback')
+            return render(request, 'checkout/feedback_success.html')
+        else:
+            messages.error(request, 'Failed to upload feedback. Please ensure the form was completed correctly.')
+    else:
+        form = FeedbackForm()
+
+    form = FeedbackForm()
+
+    template = 'checkout/feedback.html'
+    context = {
+        'form': form,
+    }
+    return render(request, template, context)
+
+
+def feedback_success_view(request):
+    """ a view to return the feedback_success_view page"""
+
+    return render(request, 'checkout/feedback_success.html')

@@ -1,5 +1,6 @@
 import uuid
 from django.db import models
+from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db.models import Sum
 from django.conf import settings
 from products.models import Products
@@ -79,3 +80,19 @@ class OrderItem(models.Model):
 
     class Meta:
         verbose_name_plural = 'Order Items'
+
+
+class Feedback(models.Model):
+    delivery_time = models.IntegerField(default=1,
+                                        validators=[MinValueValidator(1),
+                                                    MaxValueValidator(5)])
+    website = models.IntegerField(default=1,
+                                  validators=[MinValueValidator(1),
+                                              MaxValueValidator(5)])
+    checkout = models.IntegerField(default=1,
+                                   validators=[MinValueValidator(1),
+                                               MaxValueValidator(5)])
+    date = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name_plural = 'Feedback'
