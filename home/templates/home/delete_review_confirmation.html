@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+{% if user.is_authenticated %}
+<hr>
+<div class="container-fluid">
+    <div class="row justify-content-center text-light mb-5">
+        <h2>Are you sure you want to delete <strong>{{ review.title }}</strong> from the store?</h2>
+    </div>
+    <div class="row justify-content-center text-light mb-5">
+        <div class="col text-right">
+            <h4>
+                <a href="{% url 'home' %}" class="text-primary">Cancel</a>
+            </h4>
+        </div>
+        <div class="col">
+            <h4>
+                <a href="{% url 'delete_review' review.id %}" class="text-danger">Delete</a>
+            </h4>
+        </div>
+    </div>
+</div>
+{% endif %}
+{% endblock %}

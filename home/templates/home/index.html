@@ -8,36 +8,57 @@
     <div class="row-12" id="background-image">
         <img src="{% static 'images/background-image.jpg' %}" alt="background image" width="100%">
     </div>
-<hr>
+    <hr>
     <div class="row text-light justify-content-center">
         <h2>Reviews</h2>
     </div>
-<hr>
+    <hr>
     <div class="row text-dark">
-        {% for review in last_eight_reviews reversed %} 
+        {% for review in last_eight_reviews reversed %}
         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-4">
             <div class="card h-100 border-0">
                 <div class="card-top">
                     <h4 class="text-center">
-                    Username: {{ review.author}}
-                </h4>
-                <h5 class="text-center">
-                    Title: {{ review.title }}
-                </h5>
+                        Username: {{ review.author}}
+                    </h4>
+                    <h5 class="text-center">
+                        Title: {{ review.title }}
+                    </h5>
                 </div>
                 <div class="card-body">
                     <p class="text-center">
-                    {{ review.body }}
-                </p>
-                <p class="text-center">
-                    Date added: {{ review.date_added }}
-                </p>
-                <a href="{% url 'edit_review' review.id %}">Edit</a>
+                        {{ review.body }}
+                    </p>
+                    <p class="text-center">
+                        Date added: {{ review.date_added }}
+                    </p>
+                    {% if user.is_authenticated %}
+                    <div class="row">
+                        <div class="col text-center">
+                            <a href="{% url 'edit_review' review.id %}" class="text-primary text-center">Edit</a>
+                        </div>
+                        <div class="col text-center">
+                            <a href="{% url 'delete_review_confirmation' review.id %}"
+                                class="text-danger text-center">Delete</a>
+                        </div>
+                    </div>
+                    {% endif %}
                 </div>
             </div>
         </div>
         <hr>
         {% endfor %}
+    </div>
+</div>  
+<hr>
+{% if user.is_authenticated %}
+<div class="container">
+    <div class="row justify-content-center">
+        <h4><a href="{% url 'add_review' %}">Add a review</a></h4>
+        {% else %}
+        <h4 class="text-light text-center">Please <a class="text-primary" href="{% url 'account_login' %}">Log In</a> or <a class="text-primary"
+                href="{% url 'account_signup' %}">Sign Up</a> to leave a review</h4>
+        {% endif %}
     </div>
     <hr>
 </div>
