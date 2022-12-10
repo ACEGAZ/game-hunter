@@ -15,7 +15,15 @@
     <div class="row text-light justify-content-center">
         <form class="form w-50 text-center" action="{% url 'feedback' %}" method="POST">
             {% csrf_token %}
-            {{ form|crispy }}
+            <p>How easy did you find our website to use?</p>
+            {{ form.website }}
+            <hr>
+            <p>How easy was our checkout system to use?</p>
+            {{ form.checkout }}
+            <hr>
+            <p>Was your item delivered on time and in good condition?</p>
+            {{ form.delivery_time }}
+            <hr>
             <button value="submit" type="submit" class="text-primary btn btn-black btn-lg add-products-submit">Add
                 Feedback</button>
                 <h5><a href="{% url 'home' %}" class="text-danger update-link">Cancel</a></h5>
