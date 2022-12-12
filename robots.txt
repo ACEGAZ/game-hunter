@@ -1,0 +1,4 @@
+user-agent: *
+Disallow /accounts/
+Disallow /bag/
+Sitemap: https://game-hunter-website.herokuapp.com/sitemap.xml
