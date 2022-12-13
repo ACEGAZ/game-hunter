@@ -32,6 +32,17 @@
   <link href="{% static 'fontawesomefree/css/brands.css' %}" rel="stylesheet" type="text/css">
   <link href="{% static 'fontawesomefree/css/solid.css' %}" rel="stylesheet" type="text/css">
 
+  <!-- Mailchimp -->
+  <link href="//cdn-images.mailchimp.com/embedcode/classic-071822.css" rel="stylesheet" type="text/css">
+  <style type="text/css">
+    #mc_embed_signup {
+      background: #343a40;
+      font: 14px Helvetica, Arial, sans-serif;
+      width: 50%;
+      margin-left: 25%;
+    }
+  </style>
+
 
   <!-- Stripe -->
   <script src="https://js.stripe.com/v3/"></script>
@@ -56,14 +67,22 @@
   {% endif %}
 
   <title>Game Hunter</title>
-  <meta name="description" 
-  content="A UK based online store selling PS4, PS5, Xbox one, xbox series x and switch games, 
+  <meta name="description" content="A UK based online store selling PS4, PS5, Xbox one, xbox series x and switch games, 
            consoles and accessories with free delivery">
-  <meta name="keywords"
-  content="PS4 games, PS5 games, Xbox One games, Xbox Series X games, Switch games
+  <meta name="keywords" content="PS4 games, PS5 games, Xbox One games, Xbox Series X games, Switch games
            PS4 consoles, PS5 consoles, Xbox One consoles, Xbox Series X consoles, Switch consoles
            PS4 accessories, PS5 accessories, Xbox One accessories, Xbox Series X accessories, Switch accessories
            gaming, online gaming, UK, free delivery">
+
+
+  <system.webServer>
+    <staticContent>
+      <remove fileExtension=".woff2" />
+      <mimeMap fileExtension=".woff2" mimeType="font/woff2" />
+      <remove fileExtension=".ttf" />
+      <mimeMap fileExtension=".ttf" mimeType="font/ttf" />
+    </staticContent>
+  </system.webServer>
 </head>
 
 <body>
@@ -113,283 +132,230 @@
       </div>
     </nav>
   </div>
-  
 
-    <!-- second navbar-->
-    <div class="container-fluid-12">
-      <div class="row-12">
-        <nav class="navbar navbar-light bg-light navbar-expand-lg navbar-expand-md navbar-expand-sm">
 
-          <div class="navbar-collapse justify-content-center">
-            <ul class="navbar-nav">
-              <li>
-                <a class="nav-link text-dark pulse" href="{% url 'products' %}" aria-haspopup="true"
-                  aria-expanded="false">
-                  All Products
-                </a>
-              </li>
-            </ul>
-          </div>
+  <!-- second navbar-->
+  <div class="container-fluid-12">
+    <div class="row-12">
+      <nav class="navbar navbar-light bg-light navbar-expand-lg navbar-expand-md navbar-expand-sm">
 
-          <div class="navbar-collapse justify-content-center" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-              <li class="nav-item dropdown">
-                <a class="nav-link text-dark pulse" href="#" data-toggle="dropdown" aria-haspopup="true"
-                  aria-expanded="false">
-                  Games
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="{% url 'products' %}?category=Games">All Games</a>
-                  <a class="dropdown-item" href="{% url 'products' %}?category=Games&platform=PS4">PS4</a>
-                  <a class="dropdown-item" href="{% url 'products' %}?category=Games&platform=PS5">PS5</a>
-                  <a class="dropdown-item" href="{% url 'products' %}?category=Games&platform=XBOX ONE">Xbox One</a>
-                  <a class="dropdown-item" href="{% url 'products' %}?category=Games&platform=XBOX SERIES X">Xbox series
-                    x</a>
-                  <a class="dropdown-item" href="{% url 'products' %}?category=Games&platform=SWITCH">Switch</a>
-                </div>
-              </li>
-            </ul>
-          </div>
+        <div class="navbar-collapse justify-content-center">
+          <ul class="navbar-nav">
+            <li>
+              <a class="nav-link text-dark pulse" href="{% url 'products' %}" aria-haspopup="true"
+                aria-expanded="false">
+                All Products
+              </a>
+            </li>
+          </ul>
+        </div>
 
-          <div class="navbar-collapse justify-content-center">
-            <ul class="navbar-nav">
-              <li class="nav-item dropdown">
-                <a class="nav-link text-dark pulse" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                  aria-haspopup="true" aria-expanded="false">
-                  Consoles
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="{% url 'products' %}?category=Consoles">All Consoles</a>
-                  <a class="dropdown-item" href="{% url 'products' %}?category=Consoles&platform=PS4">PS4</a>
-                  <a class="dropdown-item" href="{% url 'products' %}?category=Consoles&platform=PS5">PS5</a>
-                  <a class="dropdown-item" href="{% url 'products' %}?category=Consoles&platform=XBOX ONE">Xbox One</a>
-                  <a class="dropdown-item" href="{% url 'products' %}?category=Consoles&platform=XBOX SERIES X">Xbox
-                    series x</a>
-                  <a class="dropdown-item" href="{% url 'products' %}?category=Consoles&platform=SWITCH">Switch</a>
-                </div>
-              </li>
-            </ul>
-          </div>
+        <div class="navbar-collapse justify-content-center" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+              <a class="nav-link text-dark pulse" href="#" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+                Games
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="{% url 'products' %}?category=Games">All Games</a>
+                <a class="dropdown-item" href="{% url 'products' %}?category=Games&platform=PS4">PS4</a>
+                <a class="dropdown-item" href="{% url 'products' %}?category=Games&platform=PS5">PS5</a>
+                <a class="dropdown-item" href="{% url 'products' %}?category=Games&platform=XBOX ONE">Xbox One</a>
+                <a class="dropdown-item" href="{% url 'products' %}?category=Games&platform=XBOX SERIES X">Xbox series
+                  x</a>
+                <a class="dropdown-item" href="{% url 'products' %}?category=Games&platform=SWITCH">Switch</a>
+              </div>
+            </li>
+          </ul>
+        </div>
 
-          <div class="navbar-collapse justify-content-center">
-            <ul class="navbar-nav">
-              <li class="nav-item dropdown">
-                <a class="nav-link text-dark pulse" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                  aria-haspopup="true" aria-expanded="false">
-                  Accessories
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="{% url 'products' %}?category=Accessories">All Accessories</a>
-                  <a class="dropdown-item" href="{% url 'products' %}?category=Accessories&platform=PS4">PS4</a>
-                  <a class="dropdown-item" href="{% url 'products' %}?category=Accessories&platform=PS5">PS5</a>
-                  <a class="dropdown-item" href="{% url 'products' %}?category=Accessories&platform=XBOX ONE">Xbox
-                    One</a>
-                  <a class="dropdown-item" href="{% url 'products' %}?category=Accessories&platform=XBOX SERIES X">Xbox
-                    series x</a>
-                  <a class="dropdown-item" href="{% url 'products' %}?category=Accessories&platform=SWITCH">Switch</a>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </nav>
+        <div class="navbar-collapse justify-content-center">
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+              <a class="nav-link text-dark pulse" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Consoles
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="{% url 'products' %}?category=Consoles">All Consoles</a>
+                <a class="dropdown-item" href="{% url 'products' %}?category=Consoles&platform=PS4">PS4</a>
+                <a class="dropdown-item" href="{% url 'products' %}?category=Consoles&platform=PS5">PS5</a>
+                <a class="dropdown-item" href="{% url 'products' %}?category=Consoles&platform=XBOX ONE">Xbox One</a>
+                <a class="dropdown-item" href="{% url 'products' %}?category=Consoles&platform=XBOX SERIES X">Xbox
+                  series x</a>
+                <a class="dropdown-item" href="{% url 'products' %}?category=Consoles&platform=SWITCH">Switch</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="navbar-collapse justify-content-center">
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+              <a class="nav-link text-dark pulse" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Accessories
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="{% url 'products' %}?category=Accessories">All Accessories</a>
+                <a class="dropdown-item" href="{% url 'products' %}?category=Accessories&platform=PS4">PS4</a>
+                <a class="dropdown-item" href="{% url 'products' %}?category=Accessories&platform=PS5">PS5</a>
+                <a class="dropdown-item" href="{% url 'products' %}?category=Accessories&platform=XBOX ONE">Xbox
+                  One</a>
+                <a class="dropdown-item" href="{% url 'products' %}?category=Accessories&platform=XBOX SERIES X">Xbox
+                  series x</a>
+                <a class="dropdown-item" href="{% url 'products' %}?category=Accessories&platform=SWITCH">Switch</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <form method="GET" action="{% url 'products' %}">
+    <div class="input-group mb-3">
+      <input class="form-control search-bar" type="search" placeholder="Search" aria-label="Search" name="q">
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary bg-light text-dark search-bar" type="button">Search</button>
       </div>
     </div>
-
-    <form method="GET" action="{% url 'products' %}">
-      <div class="input-group mb-3">
-        <input class="form-control search-bar" type="search" placeholder="Search" aria-label="Search" name="q">
-        <div class="input-group-append">
-          <button class="btn btn-outline-secondary bg-light text-dark search-bar" type="button">Search</button>
-        </div>
-      </div>
-    </form>
-    {% block content %}
-    {% endblock %}
+  </form>
+  {% block content %}
+  {% endblock %}
 
 
-    <!-- Footer -->
-    <footer class="bg-dark text-center text-white">
-      <!-- Grid container -->
-      <div class="container p-4">
-        <!-- Section: Social media -->
-        <section class="mb-4">
-          <!-- Facebook -->
-          <a class="btn btn-outline-light btn-floating m-1" href="#!">
-            <i class="fab fa-facebook"></i>
-          </a>
+  <!-- Footer -->
+  <footer class="bg-dark text-center text-white">
+    <!-- Grid container -->
+    <div class="container p-4">
+      <!-- Section: Social media -->
+      <section class="mb-4">
+        <!-- Facebook -->
+        <a class="btn btn-outline-light btn-floating m-1" href="#!">
+          <i class="fab fa-facebook"></i>
+        </a>
 
-          <!-- Twitter -->
-          <a class="btn btn-outline-light btn-floating m-1" href="#!" rel="noopener" role="button"><i class="fab fa-twitter"></i></a>
+        <!-- Twitter -->
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" rel="noopener" role="button"><i
+            class="fab fa-twitter"></i></a>
 
-          <!-- Google -->
-          <a class="btn btn-outline-light btn-floating m-1" href="#!" rel="noopener" role="button"><i class="fab fa-google"></i></a>
+        <!-- Google -->
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" rel="noopener" role="button"><i
+            class="fab fa-google"></i></a>
 
-          <!-- Instagram -->
-          <a class="btn btn-outline-light btn-floating m-1" href="#!" rel="noopener" role="button"><i class="fab fa-instagram"></i></a>
+        <!-- Instagram -->
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" rel="noopener" role="button"><i
+            class="fab fa-instagram"></i></a>
 
-          <!-- Linkedin -->
-          <a class="btn btn-outline-light btn-floating m-1" href="#!" rel="noopener" role="button"><i class="fab fa-linkedin"></i></a>
+        <!-- Linkedin -->
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" rel="noopener" role="button"><i
+            class="fab fa-linkedin"></i></a>
 
-          <!-- Github --> 
-          <a class="btn btn-outline-light btn-floating m-1" href="#!" rel="noopener" role="button"><i class="fab fa-github"></i></a>
-        </section>
-        <!-- Section: Social media -->
+        <!-- Github -->
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" rel="noopener" role="button"><i
+            class="fab fa-github"></i></a>
+      </section>
+      <!-- Section: Social media -->
 
-        <!-- Section: Form -->
-        <section class="">
-          <form action="">
-            <!--Grid row-->
-            <div class="row d-flex justify-content-center">
-              <!--Grid column-->
-              <div class="col-auto">
-                <p class="pt-2">
-                  <strong>Sign up for our newsletter</strong>
-                </p>
+      <!-- Begin Mailchimp Signup Form -->
+      <div class='row mailchimp' id="mc_embed_signup">
+        <form 
+          action="https://herokuapp.us21.list-manage.com/subscribe/post?u=e68ee84ecda81795610516878&amp;id=770ac43f38&amp;f_id=008cc8e1f0"
+          method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate"
+          target="_blank" novalidate>
+          <div id="mc_embed_signup_scroll">
+            <h2>Subscribe</h2>
+            <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+            <div class="mc-field-group">
+              <label for="mce-EMAIL">Email Address <span class="asterisk">*</span>
+              </label>
+              <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" required>
+              <span id="mce-EMAIL-HELPERTEXT" class="helper_text"></span>
+            </div>
+            <div id="mce-responses" class="clear foot">
+              <div class="response" id="mce-error-response" style="display:none"></div>
+              <div class="response" id="mce-success-response" style="display:none"></div>
+            </div>
+            <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+            <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text"
+                name="b_e68ee84ecda81795610516878_770ac43f38" tabindex="-1" value=""></div>
+            <div class="optionalParent">
+              <div class="clear foot">
+                <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+                <p class="brandingLogo"><a href="http://eepurl.com/if26CL"
+                    title="Mailchimp - email marketing made easy and fun"><img
+                      src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_dark_dtp.svg"></a></p>
               </div>
-              <!--Grid column-->
-
-              <!--Grid column-->
-              <div class="col-md-5 col-12">
-                <!-- Email input -->
-                <div class="form-outline form-white mb-4">
-                  <input type="email" id="form5Example21" class="form-control" placeholder="email address" />
-                  <label class="form-label" for="form5Example21"></label>
-                </div>
-              </div>
-              <!--Grid column-->
-
-              <!--Grid column-->
-              <div class="col-auto">
-                <!-- Submit button -->
-                <button type="submit" class="btn btn-outline-light mb-4">
-                  Subscribe
-                </button>
-              </div>
-              <!--Grid column-->
             </div>
-            <!--Grid row-->
-          </form>
-        </section>
-        <!-- Section: Form -->
-
-        <!-- Section: Text -->
-        <section class="mb-4">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt distinctio earum
-            repellat quaerat voluptatibus placeat nam, commodi optio pariatur est quia magnam
-            eum harum corrupti dicta, aliquam sequi voluptate quas.
-          </p>
-        </section>
-        <!-- Section: Text -->
-
-        <!-- Section: Links -->
-        <section class="">
-          <!--Grid row-->
-          <div class="row">
-            <!--Grid column-->
-            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-              <h5 class="text-uppercase">Links</h5>
-
-              <ul class="list-unstyled mb-0">
-                <li>
-                  <a href="#!" class="text-white">Link 1</a>
-                </li>
-                <li>
-                  <a href="#!" class="text-white">Link 2</a>
-                </li>
-                <li>
-                  <a href="#!" class="text-white">Link 3</a>
-                </li>
-                <li>
-                  <a href="#!" class="text-white">Link 4</a>
-                </li>
-              </ul>
-            </div>
-            <!--Grid column-->
-
-            <!--Grid column-->
-            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-              <h5 class="text-uppercase">Links</h5>
-
-              <ul class="list-unstyled mb-0">
-                <li>
-                  <a href="#!" class="text-white">Link 1</a>
-                </li>
-                <li>
-                  <a href="#!" class="text-white">Link 2</a>
-                </li>
-                <li>
-                  <a href="#!" class="text-white">Link 3</a>
-                </li>
-                <li>
-                  <a href="#!" class="text-white">Link 4</a>
-                </li>
-              </ul>
-            </div>
-            <!--Grid column-->
-
-            <!--Grid column-->
-            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-              <h5 class="text-uppercase">Links</h5>
-
-              <ul class="list-unstyled mb-0">
-                <li>
-                  <a href="#!" class="text-white">Link 1</a>
-                </li>
-                <li>
-                  <a href="#!" class="text-white">Link 2</a>
-                </li>
-                <li>
-                  <a href="#!" class="text-white">Link 3</a>
-                </li>
-                <li>
-                  <a href="#!" class="text-white">Link 4</a>
-                </li>
-              </ul>
-            </div>
-            <!--Grid column-->
-
-            <!--Grid column-->
-            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-              <h5 class="text-uppercase">Links</h5>
-
-              <ul class="list-unstyled mb-0">
-                <li>
-                  <a href="#!" class="text-white">Link 1</a>
-                </li>
-                <li>
-                  <a href="#!" class="text-white">Link 2</a>
-                </li>
-                <li>
-                  <a href="#!" class="text-white">Link 3</a>
-                </li>
-                <li>
-                  <a href="#!" class="text-white">Link 4</a>
-                </li>
-              </ul>
-            </div>
-            <!--Grid column-->
           </div>
-          <!--Grid row-->
-        </section>
-        <!-- Section: Links -->
+        </form>
       </div>
-      <!-- Grid container -->
+      <!--End mc_embed_signup-->
 
-      <!-- Copyright -->
-      <div class="text-center p-3" style="background-color: rgba(239, 238, 238, 0.2);">
-        © 2020 Copyright:
-        <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+
+      <!--Grid row-->
+      <div class="row justify-content-center ">
+        <!--Grid column-->
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase">Links</h5>
+
+          <ul class="list-unstyled mb-0">
+            <li>
+              <a href="#!" class="text-white">Link 1</a>
+            </li>
+            <li>
+              <a href="#!" class="text-white">Link 2</a>
+            </li>
+            <li>
+              <a href="#!" class="text-white">Link 3</a>
+            </li>
+            <li>
+              <a href="#!" class="text-white">Link 4</a>
+            </li>
+          </ul>
+        </div>
+        <!--Grid column-->
       </div>
-      <!-- Copyright -->
-    </footer>
-    <!-- Footer -->
-    <script src="https://use.fontawesome.com/74287a9521.js"></script>
-    <script src="https://kit.fontawesome.com/e81d17d39f.js" crossorigin="anonymous"></script>
-    
-    {% block postloadjs %}
+      <!--Grid row-->
+    </div>
+    <!-- Grid container -->
+
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(239, 238, 238, 0.2);">
+      © 2020 Copyright:
+      <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+  <script src="https://use.fontawesome.com/74287a9521.js"></script>
+  <script src="https://kit.fontawesome.com/e81d17d39f.js" crossorigin="anonymous"></script>
+
+  {% block postloadjs %}
   <script type="text/javascript">
     $('.toast').toast('show');
+  </script>
+  <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
+  <script type='text/javascript'>
+    (function ($) {
+      window.fnames = new Array();
+      window.ftypes = new Array();
+      fnames[0] = 'EMAIL';
+      ftypes[0] = 'email';
+      fnames[1] = 'FNAME';
+      ftypes[1] = 'text';
+      fnames[2] = 'LNAME';
+      ftypes[2] = 'text';
+      fnames[3] = 'ADDRESS';
+      ftypes[3] = 'address';
+      fnames[4] = 'PHONE';
+      ftypes[4] = 'phone';
+      fnames[5] = 'BIRTHDAY';
+      ftypes[5] = 'birthday';
+    }(jQuery));
+    var $mcj = jQuery.noConflict(true);
   </script>
   {% endblock %}
 </body>
