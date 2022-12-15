@@ -31,7 +31,7 @@ DEBUG = 'DEVELOPMENT' in os.environ
 
 
 ALLOWED_HOSTS = ['localhost', 'game-hunter-website.herokuapp.com']
-CSRF_TRUSTED_ORIGINS = ["https://8000-acegaz-gamehunter-pkgxu861c7s.ws-eu78.gitpod.io"]
+CSRF_TRUSTED_ORIGINS = ["https://8000-acegaz-gamehunter-pkgxu861c7s.ws-eu79.gitpod.io"]
 
 
 # Application definition

@@ -14,11 +14,10 @@
         <table class="table table-sm">
             <thead class="text-light">
                 <tr>
-                    <th>Games</th>
-                    <th>Description</th>
+                    <th>Item</th>
                     <th>Price</th>
                     <th class="text-center">Platform</th>
-                    <th class="text-center">Qty</th>
+                    <th class="text-center w-25">Qty</th>
                 </tr>
             </thead>
 
@@ -27,9 +26,6 @@
                 <td>
                     <p>{{ item.product.name }}</p>
                     <img src="{{ item.product.image.url}}" width="25%" height="25%" class="mb-5 mt-2">
-                </td>
-                <td class="mt-5">
-                    <p>{{ item.product.description }}</p>
                 </td>
                 <td class="mt-5">
                     <p>£{{ item.product.price }}</p>
@@ -81,8 +77,9 @@
 {% block postloadjs %}
 {{ block.super }}
 <script type="text/javascript">
+
 // update qty
-$('.update-link').click(function(e) {
+$('.update-link').click(function (e) {
         var form = $(this).prev('.update-form');
         form.submit();
     })
@@ -102,5 +99,15 @@ $('.update-link').click(function(e) {
                 location.reload();
             });
     })
+
+const numInputs = document.querySelectorAll('input[type=number]')
+
+numInputs.forEach(function(input) {
+  input.addEventListener('change', function(e) {
+    if (e.target.value == '') {
+      e.target.value = 0
+    }
+  })
+})
 </script>
 {% endblock %}
