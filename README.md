@@ -1,10 +1,10 @@
-# Art By Heart Sketch
+# Game Hunter
 
-Art By Heart Sketch is a website designed for users to view artwork made by the website owner and commisson the owner to draw custom pieces for themselves.
+Game hunter is a UK website focused on selling and delivering games, consoles and accessories to online users, exclusively within the UK. 
 
 # Motivation
 
-I decided to build this website for my sister who sells her artwork through Instagram, Facebook and Twitter but does not have an easy way to demonstrate her artwork and get buyers specification. The Website fulfils this need and allows her to easily upload her work and find new potential contacts and buyers.   
+My motivation for this project was my love of all things gaming. I wanted to deliver an intuitive website that is dedicated to UK customers and provides a great service with an easy to use website.    
 
 # Table of contents
 1. [Project Description](#project-description)
@@ -12,51 +12,359 @@ I decided to build this website for my sister who sells her artwork through Inst
     2. [Landing Page](#landing-page)
     3. [My Profile](#my-profile)
     4. [Sign Up](#sign-up)
-    5. [Log Out](#log-out)
-    6. [All Products](#all-products)
-    7. [Games](#games)
-    8. [Consoles](#consoles)
-    9. [Accessories](#accessories)
-    10. [Check Out](#check-out)
-    11. [Responsive Design](#responsive-design)
-2. [Technologies Used](#technologies-used)
-3. [Development](#development)
-4. [Deployment](#deployment)
-5. [Tests](#tests)
-6. [Validators](#validators)
-7. [Bugs & Solutions](#bugs-&-solutions)
-8. [Updates](#updates)
-9. [Credits](#credits)
+    5. [Log In](#log-in)
+    6. [Log Out](#log-out)
+    7. [All Products](#all-products)
+    8. [Games](#games)
+       1. [All Games](#all-games)
+       2. [PS4](#ps4)
+       3. [PS5](#ps5)
+       4. [Xbox One](#xbox-one)
+       5. [Xbox Series X](#xbox-series-x)
+       6. [Switch](#switch)
+    9. [Consoles](#consoles)
+       1. [All Consoles](#all-consoles)
+       2. [PS4](#ps4)
+       3. [PS5](#ps5)
+       4. [Xbox One](#xbox-one)
+       5. [Xbox Series X](#xbox-series-x)
+       6. [Switch](#switch)
+   10. [Accessories](#accessories)
+       1. [All Accessories](#all-accessories)
+       2. [PS4](#ps4)
+       3. [PS5](#ps5)
+       4. [Xbox One](#xbox-one)
+       5. [Xbox Series X](#xbox-series-x)
+       6. [Switch](#switch)
+    11. [Reviews](#reviews)
+    12. [Footer](#footer)
+    13. [Feedback](#feedback)
+    14. [Check Out](#check-out)
+    15. [Add, edit and delete products](#add-edit-and-delete-products)
+    16. [Responsive Design](#responsive-design)
+2. [Data Schema](#data-schema)
+3. [Technologies Used](#technologies-used)
+4. [Facebook Page](#facebook-page)
+5. [Development](#development)
+6. [Deployment](#deployment)
+7. [Tests](#tests)
+8. [Validators](#validators)
+9. [Bugs & Solutions](#bugs-&-solutions)
+10. [Updates](#updates)
+11. [Credits](#credits)
 
 
 ## Project Description <a name="project-description"></a>
-Art By Heart Sketch is desigend to give the user an example of what kinds of art they can commission from the artist and easily send the artist an email to commission the type of drawing they want. The website uses Python, Django Full Stack Framework, Bootstraps and Cloudinary for static files and image storage.  
 
+My project uses a simple, easy to follow layout with drop down links that takes the user to the selected category.
+This allows for very easy navigation. The user can easily find a product using the search bar or by selecting the category.
+Purchases are made easy using stripe and take a few minutes.
+
+An admin user is able to add, edit and delete products from the UI with no need to go to the Django admin panel
+
+I decided to go with a black and white colour scheme with a few hints of grey to keep the site easy to read. 
+ 
 <hr>
 
 - Navigation <a name="navigation"></a>
 
+Navigating the website is done using two Nav-bars and a serach bar. The first contains the brand, "home", "my account" and loot links. 
+<br>
+<br>
+The "brand" when  clicked will bring the user to the home page. 
+
+The "home" link which will also bring the user to the home page.
+
+The "my account" link which drops down to reveal log in and sign up links if the user is not logged in. If the user is logged in
+then the users name folled by "profile" link will be displayed and will take the user to their profile page.
+If the user is a superuser then the add product link will also display for the user to add new products to the store. 
+
+The "loot" links are the current amount of the items in the bag and a chest symbol, both will take the user to the bag page.
+
+<br>
+
+The second Nav-bar contains the "all products", "games", "consoles" and "accessories" links. 
+
+The "all products" link allows the user to view every product, in all categories.
+
+The "games" link is a drop down link containing "all games", "PS4", "PS5", "XBOX ONE", "XBOX SERIES X" and switch links.
+Each link will take the user to the selected category. 
+
+The console and accessories links function the same way as the "games" link.
+
+<br>
+
+The search bar can be used to find specific items, across all categories. The user simply types what they are looking for 
+and if it matches a product then it will be displayed. 
+<br>
+<br>
+<img src = 'static/images/navigation.png'>
+<hr>
 
 - Landing Page <a name="landing-page"></a>
-
-    The landing page is a read only page that demostrates what the user will get and the prices that the artist will charge. 
-
-
+ 
+  The landing page is simple, it shows the user a gaming themed picture, the nav-bars, footer and review section. 
+  This makes it immediately obvious to the user what the site is selling. 
+  <br>
+  <br>
+  <img src = 'static/images/landing-page-1.png'>
+  <br>
+  <br>
+  <img src = 'static/images/landing-page-2.png'>
+  <hr>
 - My Profile <a name="my-profile"></a>
 
+  The profile page allows the user to see and save their shipping details for faster checking out and also shows all previous 
+  orders the user has made. 
+  <br>
+  <br>
+  <img src = 'static/images/profile-page.png'>
+  <hr>
 - Sign Up <a name="sign-up"></a>
+  
+  The sign up page askes the user to provide an email address, username and password. Once all have been entered a verification 
+  email is sent to the users provided email with a verification link, once the link is clicked the user is verified and can sign in. 
+  <br>
+  <br>
+  <img src = 'static/images/sign-up-page.png'>
+  <br>
+  <br>
+  If the user tries to sign in without verifying they are taken to the verify your email page.
+  <br>
+  <br>
+  <img src = 'static/images/verify-your-e-mail-address-page.png'>
+  <hr>
+
+- Log In <a name="log-in"></a>
+
+  The log in page askes the user to fill in their username or email and password. Once the information is provided
+  the user is logged in and taken to the home page. 
+  <br>
+  <br>
+  <img src = 'static/images/log-in-page.png'>
+  <hr>
 
 - Log Out <a name="log-out"></a>
+  
+  The log out page askes the user if they want to log out and will only log the user out once the "log out" button is pressed.
+  <br>
+  <br>
+  <img src = 'static/images/log-out-page.png'>
+  <hr>
 
 - All Products <a name="all-products"></a>
+  
+  The all products page allows the user to view every product on the store and the sort box allows the user to sort products by price (low to high) or (high to low)
+  or name (A to Z) or (Z to A).
+  <br>
+  <br>
+  <img src = 'static/images/all-products-page-1.png'>
+  <br>
+  <br>
+  <img src = 'static/images/all-products-page-2.png'>
+  <hr>
 
 - Games <a name="games"></a>
 
+  The games link is a drop down link that contains all the links to take the user to the category they select. 
+
+  <br>
+  <img src = 'static/images/games-dropdown-link.png'>
+  <br>
+  <br>
+
+    - All Games<a name="all-games"></a>
+      <br>
+      <br>
+      The all games page allows the user to browse every game, on every platform. 
+      <br>
+      <br>
+      <img src = 'static/images/all-games-page.png'>
+      <hr>
+      <br>
+    - PS4 Games<a name="ps4"></a>
+      <br>
+      <br>
+      The PS4 games page shows only PS4 games to the user.
+      <br>
+      <br>
+      <img src = 'static/images/ps4-games-page.png'>
+      <hr>
+      <br>
+    - PS5 Games<a name="ps5"></a>
+      <br>
+      <br>
+      The PS5 games page shows only PS5 games to the user.
+      <br>
+      <br>
+      <img src = 'static/images/ps5-games-page.png'>
+      <hr>
+      <br>
+    - Xbox One Games<a name="xbox-one"></a>
+      <br>
+      <br>
+      The Xbox One games page shows only Xbox One games to the user.
+      <br>
+      <br>
+      <img src = 'static/images/xbox-one-games-page.png'>
+      <hr>
+      <br>
+    - Xbox Series X Games<a name="xbox-series-x"></a>
+      <br>
+      <br>
+      The Xbox Series X games page shows only Xbox Series X games to the user.
+      <br>
+      <br>
+      <img src = 'static/images/xbox-series-x-games-page.png'>
+      <hr>
+      <br>
+    - Switch Games<a name="switch"></a>
+      <br>
+      <br>
+      The Switch games page shows only Switch games to the user.
+      <br>
+      <br>
+      <img src = 'static/images/switch-games-page.png'>
+      <hr>
+      <br>
+
 - Consoles <a name="consoles"></a>
+  
+  The consoles link is a drop down link that contains all the links to take the user to the category they select. 
+
+  <br>
+  <img src = 'static/images/consoles-dropdown-link.png'>
+  <br>
+  <br>
+    
+    - All Consoles <a name="all-consoles"></a>
+      <br>
+      <br>
+      The all consoles page allows the user to browse every console. 
+      <br>
+      <br>
+      <img src = 'static/images/all-consoles-page.png'>
+      <hr>
+      <br>
+    - PS4 Consoles<a name="ps4"></a>
+      <br>
+      <br>
+      The PS4 consoles page allows the user to browse every PS4 console. 
+      <br>
+      <br>
+      <img src = 'static/images/ps4-consoles-page.png'>
+      <hr>
+      <br>
+    - PS5 Consoles<a name="ps5"></a>
+      <br>
+      <br>
+      The PS5 consoles page allows the user to browse every PS5 console. 
+      <br>
+      <br>
+      <img src = 'static/images/ps5-consoles-page.png'>
+      <hr>
+      <br>
+    - Xbox One Consoles<a name="xbox-one"></a>
+      <br>
+      <br>
+      The Xbox One consoles page allows the user to browse every Xbox One console. 
+      <br>
+      <br>
+      <img src = 'static/images/xbox-one-consoles-page.png'>
+      <hr>
+      <br>
+    - Xbox Series X Consoles<a name="xbox-series-x"></a>
+      <br>
+      <br>
+      The Xbox Series X consoles page allows the user to browse every Xbox Series X console. 
+      <br>
+      <br>
+      <img src = 'static/images/xbox-series-x-consoles-page.png'>
+      <hr>
+      <br>
+    - Switch Consoles<a name="switch"></a>
+      <br>
+      <br>
+      The Switch consoles page allows the user to browse every Switch console. 
+      <br>
+      <br>
+      <img src = 'static/images/switch-consoles-page.png'>
+      <hr>
+      <br>
 
 - Accessories <a name="accessories"></a>
 
+  The accessories link is a drop down link that contains all the links to take the user to the category they select. 
+
+  <br>
+  <img src = 'static/images/all-accessories-dropdown-link.png'>
+  <br>
+  <br>
+
+    - All Accessories<a name="all-accessories"></a>
+      <br>
+      <br>
+      The all accessories page allows the user to browse every accessory. 
+      <br>
+      <br>
+      <img src = 'static/images/all-accessories-page.png'>
+      <hr>
+      <br>
+    - PS4 Accessories<a name="ps4"></a>
+      <br>
+      <br>
+      The PS4 accessories page allows the user to browse every PS4 accessory. 
+      <br>
+      <br>
+      <img src = 'static/images/ps4-accessories-page.png'>
+      <hr>
+      <br>
+    - PS5 Accessories<a name="ps5"></a>
+      <br>
+      <br>
+      The PS5 accessories page allows the user to browse every PS5 accessory. 
+      <br>
+      <br>
+      <img src = 'static/images/ps5-accessories-page.png'>
+      <hr>
+      <br>
+    - Xbox One Accessories<a name="xbox-one"></a>
+      <br>
+      <br>
+      The Xbox One accessories page allows the user to browse every Xbox One accessory. 
+      <br>
+      <br>
+      <img src = 'static/images/xbox-one-accessories-page.png'>
+      <hr>
+      <br>
+    - Xbox Series X Accessories<a name="xbox-series-x"></a>
+      <br>
+      <br>
+      The Xbox Series X accessories page allows the user to browse every Xbox Series X accessory. 
+      <br>
+      <br>
+      <img src = 'static/images/xbox-series-x-accessories-page.png'>
+      <hr>
+      <br>
+    - Switch Accessories<a name="switch"></a>
+      <br>
+      <br>
+      The Switch accessories page allows the user to browse every Switch accessory. 
+      <br>
+      <br>
+      <img src = 'static/images/switch-accessories-page.png'>
+      <hr>
+      <br>
+
+- Reviews <a name="reviews"></a>
+
+- Footer <a name="footer"></a>
+
+- Feedback <a name="feedback"></a>
+
 - Check Out <a name="check-out"></a>
+
+- Add, edit and delete products <a name="add-edit-and-delete-products"></a>
 
 - Responsive Design <a name="responsive-design"></a>
 
@@ -64,6 +372,8 @@ Art By Heart Sketch is desigend to give the user an example of what kinds of art
     comment section in a single column. All elements are sized accordingly using bootstraps containers, rows and column. 
 
     Below are images of the responsive design as Heroku will not allow the app to connect to a "am I responsive website."
+
+## Data Schema <a name="data-schema"></a>
 
 
 ## Technologies Used <a name="technologies-used"></a>
@@ -97,8 +407,9 @@ Art By Heart Sketch is desigend to give the user an example of what kinds of art
   - stripe==5.0.0
   - whitenoise==6.2.0
 
-## Development <a name="development"></a>
+## Facebook Page <a name="facebook-page"></a>
 
+## Development <a name="development"></a>
 
 ## Deployment <a name="deployment"></a>
   
@@ -454,15 +765,11 @@ Description:
 
 ### WC3 HTML
 
-<img src = 'static/images/WC3 HTML validator.png'>
-
-<hr>
 
 ### PEP8
 
 
 ## Bugs & Solutions <a name="bugs-&-solutions"></a> 
-
 
 
 ## Updates <a name="updates"></a>
