@@ -17,31 +17,33 @@ My motivation for this project was my love of all things gaming. I wanted to del
     7. [All Products](#all-products)
     8. [Games](#games)
        1. [All Games](#all-games)
-       2. [PS4](#ps4)
-       3. [PS5](#ps5)
-       4. [Xbox One](#xbox-one)
-       5. [Xbox Series X](#xbox-series-x)
-       6. [Switch](#switch)
+       2. [PS4](#ps4-games)
+       3. [PS5](#ps5-games)
+       4. [Xbox One](#xbox-one-games)
+       5. [Xbox Series X](#xbox-series-x-games)
+       6. [Switch](#switch-games)
     9. [Consoles](#consoles)
        1. [All Consoles](#all-consoles)
-       2. [PS4](#ps4)
-       3. [PS5](#ps5)
-       4. [Xbox One](#xbox-one)
-       5. [Xbox Series X](#xbox-series-x)
-       6. [Switch](#switch)
+       2. [PS4](#ps4-consoles)
+       3. [PS5](#ps5-consoles)
+       4. [Xbox One](#xbox-one-consoles)
+       5. [Xbox Series X](#xbox-series-x-consoles)
+       6. [Switch](#switch-consoles)
    10. [Accessories](#accessories)
        1. [All Accessories](#all-accessories)
-       2. [PS4](#ps4)
-       3. [PS5](#ps5)
-       4. [Xbox One](#xbox-one)
-       5. [Xbox Series X](#xbox-series-x)
-       6. [Switch](#switch)
+       2. [PS4](#ps4-accessories)
+       3. [PS5](#ps5-accessories)
+       4. [Xbox One](#xbox-one-accessories)
+       5. [Xbox Series X](#xbox-series-x-accessories)
+       6. [Switch](#switch-accessories)
     11. [Reviews](#reviews)
     12. [Footer](#footer)
     13. [Feedback](#feedback)
-    14. [Check Out](#check-out)
-    15. [Add, edit and delete products](#add-edit-and-delete-products)
-    16. [Responsive Design](#responsive-design)
+    14. [Product Detail](#product-detail)
+    15. [Loot](#loot)
+    16. [Check Out](#check-out)
+    17. [Add, edit and delete products](#add-edit-and-delete-products)
+    18. [Responsive Design](#responsive-design)
 2. [Data Schema](#data-schema)
 3. [Technologies Used](#technologies-used)
 4. [Facebook Page](#facebook-page)
@@ -93,7 +95,7 @@ Each link will take the user to the selected category.
 The console and accessories links function the same way as the "games" link.
 
 <br>
-
+<br>
 The search bar can be used to find specific items, across all categories. The user simply types what they are looking for 
 and if it matches a product then it will be displayed. 
 <br>
@@ -102,7 +104,8 @@ and if it matches a product then it will be displayed.
 <hr>
 
 - Landing Page <a name="landing-page"></a>
- 
+  <br>
+  <br>
   The landing page is simple, it shows the user a gaming themed picture, the nav-bars, footer and review section. 
   This makes it immediately obvious to the user what the site is selling. 
   <br>
@@ -113,15 +116,18 @@ and if it matches a product then it will be displayed.
   <img src = 'static/images/landing-page-2.png'>
   <hr>
 - My Profile <a name="my-profile"></a>
-
+  <br>
+  <br>
   The profile page allows the user to see and save their shipping details for faster checking out and also shows all previous 
   orders the user has made. 
   <br>
   <br>
   <img src = 'static/images/profile-page.png'>
   <hr>
+
 - Sign Up <a name="sign-up"></a>
-  
+  <br>
+  <br>
   The sign up page askes the user to provide an email address, username and password. Once all have been entered a verification 
   email is sent to the users provided email with a verification link, once the link is clicked the user is verified and can sign in. 
   <br>
@@ -182,7 +188,7 @@ and if it matches a product then it will be displayed.
       <img src = 'static/images/all-games-page.png'>
       <hr>
       <br>
-    - PS4 Games<a name="ps4"></a>
+    - PS4 Games<a name="ps4-games"></a>
       <br>
       <br>
       The PS4 games page shows only PS4 games to the user.
@@ -191,7 +197,7 @@ and if it matches a product then it will be displayed.
       <img src = 'static/images/ps4-games-page.png'>
       <hr>
       <br>
-    - PS5 Games<a name="ps5"></a>
+    - PS5 Games<a name="ps5-games"></a>
       <br>
       <br>
       The PS5 games page shows only PS5 games to the user.
@@ -200,7 +206,7 @@ and if it matches a product then it will be displayed.
       <img src = 'static/images/ps5-games-page.png'>
       <hr>
       <br>
-    - Xbox One Games<a name="xbox-one"></a>
+    - Xbox One Games<a name="xbox-one-games"></a>
       <br>
       <br>
       The Xbox One games page shows only Xbox One games to the user.
@@ -209,7 +215,7 @@ and if it matches a product then it will be displayed.
       <img src = 'static/images/xbox-one-games-page.png'>
       <hr>
       <br>
-    - Xbox Series X Games<a name="xbox-series-x"></a>
+    - Xbox Series X Games<a name="xbox-series-x-games"></a>
       <br>
       <br>
       The Xbox Series X games page shows only Xbox Series X games to the user.
@@ -218,7 +224,7 @@ and if it matches a product then it will be displayed.
       <img src = 'static/images/xbox-series-x-games-page.png'>
       <hr>
       <br>
-    - Switch Games<a name="switch"></a>
+    - Switch Games<a name="switch-games"></a>
       <br>
       <br>
       The Switch games page shows only Switch games to the user.
@@ -310,7 +316,7 @@ and if it matches a product then it will be displayed.
       <img src = 'static/images/all-accessories-page.png'>
       <hr>
       <br>
-    - PS4 Accessories<a name="ps4"></a>
+    - PS4 Accessories<a name="ps4-accessories"></a>
       <br>
       <br>
       The PS4 accessories page allows the user to browse every PS4 accessory. 
@@ -319,7 +325,7 @@ and if it matches a product then it will be displayed.
       <img src = 'static/images/ps4-accessories-page.png'>
       <hr>
       <br>
-    - PS5 Accessories<a name="ps5"></a>
+    - PS5 Accessories<a name="ps5-accessories"></a>
       <br>
       <br>
       The PS5 accessories page allows the user to browse every PS5 accessory. 
@@ -328,7 +334,7 @@ and if it matches a product then it will be displayed.
       <img src = 'static/images/ps5-accessories-page.png'>
       <hr>
       <br>
-    - Xbox One Accessories<a name="xbox-one"></a>
+    - Xbox One Accessories<a name="xbox-one-accessories"></a>
       <br>
       <br>
       The Xbox One accessories page allows the user to browse every Xbox One accessory. 
@@ -337,7 +343,7 @@ and if it matches a product then it will be displayed.
       <img src = 'static/images/xbox-one-accessories-page.png'>
       <hr>
       <br>
-    - Xbox Series X Accessories<a name="xbox-series-x"></a>
+    - Xbox Series X Accessories<a name="xbox-series-x-accessories"></a>
       <br>
       <br>
       The Xbox Series X accessories page allows the user to browse every Xbox Series X accessory. 
@@ -346,7 +352,7 @@ and if it matches a product then it will be displayed.
       <img src = 'static/images/xbox-series-x-accessories-page.png'>
       <hr>
       <br>
-    - Switch Accessories<a name="switch"></a>
+    - Switch Accessories<a name="switch-accessories"></a>
       <br>
       <br>
       The Switch accessories page allows the user to browse every Switch accessory. 
@@ -357,14 +363,205 @@ and if it matches a product then it will be displayed.
       <br>
 
 - Reviews <a name="reviews"></a>
+  
+  The reviews section is part of the home page will display the 8 most recent reviews that users leave.
+  <br>
+  If the user is not logged in or signed up then the section will ask the user to log in or sign up, with the relevent links.
+  <br>
+  <br>
+  <img src = 'static/images/review-section-1.png'>
+  <br>
+  <br>
+  If the user is logged in then the add review link will be displayed.
+  <br>
+  <br>
+  <img src = 'static/images/review-section-2.png'>
+  <br>
+  <br>
+  Once the add review link is clicked the user will be taken to the add review page where they can enter their review.
+  <br>
+  <br>
+  <img src = 'static/images/add-review-page.png'>
+  <br>
+  <br>
+  Once the review is complete the user is taken to the add review success page and given a link to return to the home page.
+  <br>
+  <br>
+  <img src = 'static/images/add-review-page-2.png'>
+  <br>
+  <br>
+  The review is then displayed with the options to edit or delete the review if the user that is logged in is the one who posted it.
+  <br>
+  <br>
+  <img src = 'static/images/review-section-3.png'>
+  <br>
+  <br>
+  If the edit review link is clicked the user is taken to the edit review page. The user can edit the review or cancel and be taken back to the home page. 
+  <br>
+  <br>
+  <img src = 'static/images/edit-review-page.png'>
+  <br>
+  <br>
+  If the delete review link is clicked the user is taken to the delete review confirmation page. The user can delete the review or cancel and be taken back to the home page.
+  <br>
+  <br>
+  <img src = 'static/images/delete-review-page.png'>
+  <br>
+  <hr>
 
 - Footer <a name="footer"></a>
+  <br>
+  The footer contains social links, privacy policy link and the option for a user to subscribe. The social links have been removed because the pages they link to do not currently exists. If the site goes into real world use then the social links will be added with the code below. 
+  <br>
+  <!-- Section: Social media -->
+      <section class="mb-4">
+        <!-- Facebook -->
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" rel="noopener">
+          <i class="fab fa-facebook"></i>
+        </a>
+
+        <!-- Twitter -->
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" rel="noopener" role="button"><i
+            class="fab fa-twitter"></i></a>
+
+        <!-- Google -->
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" rel="noopener" role="button"><i
+            class="fab fa-google"></i></a>
+
+        <!-- Instagram -->
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" rel="noopener" role="button"><i
+            class="fab fa-instagram"></i></a>
+
+        <!-- Linkedin -->
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" rel="noopener" role="button"><i
+            class="fab fa-linkedin"></i></a>
+      </section>
+<!-- Section: Social media -->
+  <br>
+  <br>
+  <img src = 'static/images/social-links-in-production.png'>
+  <br>
+  <br>
+  The footer out of production currently looks like the image below.
+  <br>
+  <br>
+  <img src = 'static/images/footer-section.png'>
+  <br>
+  <hr>
 
 - Feedback <a name="feedback"></a>
+  <br>
+  <br>
+  The user can get to the feedback page from the checkout success page and it is an optional link. 
+  <br>
+  <br>
+  <img src = 'static/images/feedback-link.png'>
+  <br>
+  <br>
+  Once the user is on the feedback page they can choose to rate the website, checkout and delivery time. 
+  <br>
+  <br>
+  <img src = 'static/images/feedback-page.png'>
+  <br>
+  <br>
+  Once the user has submitted their feedback they are taken to the feedback success page and are given a link to return to the home page. 
+  <br>
+  <br>
+  <img src = 'static/images/feedback-success-page.png'>
+  <br>
+  <hr>
+
+- Product Detail <a name="product-detail"></a>
+  <br>
+  <br>
+  Once the user has selected a product, they are taken to the product detail page and given the option to change the quantity and can add it to their loot bag. 
+  They are also given a link to return to the product page.
+  <br>
+  <br>
+  <img src = 'static/images/product-detail-page.png'>
+  <br>
+  <hr>
+
+- Loot <a name="loot"></a>
+  <br>
+  <br>
+  Once the user has selected submit from the product detail page, they are taken to the loot page. 
+  Here the user can remove the item from their loot, update the quantity, go back to the product page or securely checkout. 
+  <br>
+  <br>
+  <img src = 'static/images/loot-page.png'>
+  <br>
+  <hr>
 
 - Check Out <a name="check-out"></a>
+  <br>
+  <br>
+  Once the user has selected the secure checkout link they are taken to the checkout page.
+  Here the user is asked to enter their details, delivery information and card details. 
+  <br>
+  <br>
+  If the user is not looged in they are asked to log in or create an account to save their information.
+  <br>
+  <br>
+  If the user is logged in they have the option to save their delivery information for faster checking out. 
+  <br>
+  <br>
+  <img src = 'static/images/checkout-page-1.png'>
+  <br>
+  <br>
+  <img src = 'static/images/checkout-page-2.png'>
+  <br>
+  <br>
+  <img src = 'static/images/checkout-page-3.png'>
+  <br>
+  <hr>
 
 - Add, edit and delete products <a name="add-edit-and-delete-products"></a>
+  <br>
+  <br>
+  If the user is a superuser they can access the add product page through the "my account" link in the top nav-bar.
+  <br>
+  <br>
+  If the user is not a superuser they will not see this link and trying to access it through the direct url will direct the user to the log in page. 
+  <br>
+  <br>
+  <img src = 'static/images/add-product-page-1.png'>
+  <br>
+  <br>
+  <img src = 'static/images/add-product-page-2.png'>
+  <br>
+  <br>
+  Once a product has been added it can be edited or deleted from the product page or from the product detail page.
+  <br>
+  <br>
+  If the user is not a superuser and tries to access the edit or delete page from the url then they are taken to the log in page.
+  <br>
+  <br>
+  <img src = 'static/images/edit-link.png'>
+  <br>
+  <br>
+  <img src = 'static/images/edit-link-2.png'>
+  <br>
+  <br>
+  When a superuser selects one of the edit links they are taken to the edit product page and they are able to edit all of the fields they entered when adding the product, or cancel and be taken back to the home page. 
+  <br>
+  <br>
+  <img src = 'static/images/edit-product-page-1.png'>
+  <br>
+  <br>
+  <img src = 'static/images/edit-product-page-2.png'>
+  <br>
+  <br>
+  When a superuser selects one of the delete links they are taken to the delete product confirmation page and asked if they are sure they want to delete the product or cancel and be taken back to the products page. If the delete button is clicked then the product is deleted.
+  <br>
+  <br>
+  If a normal user tries to access the delete product page from the url they are taken to the log in page. 
+  <br>
+  <br>
+  <img src = 'static/images/delete-product-page.png'>
+  <br>
+  <hr>
+
 
 - Responsive Design <a name="responsive-design"></a>
 
@@ -827,34 +1024,3 @@ removing products from bag not displaying toasts
 Webhooks not working (401 (Unauthorized))
 
 update button on bag not working
-
-
-
-<!-- Section: Social media -->
-      <section class="mb-4">
-        <!-- Facebook -->
-        <a class="btn btn-outline-light btn-floating m-1" href="#!">
-          <i class="fab fa-facebook"></i>
-        </a>
-
-        <!-- Twitter -->
-        <a class="btn btn-outline-light btn-floating m-1" href="#!" rel="noopener" role="button"><i
-            class="fab fa-twitter"></i></a>
-
-        <!-- Google -->
-        <a class="btn btn-outline-light btn-floating m-1" href="#!" rel="noopener" role="button"><i
-            class="fab fa-google"></i></a>
-
-        <!-- Instagram -->
-        <a class="btn btn-outline-light btn-floating m-1" href="#!" rel="noopener" role="button"><i
-            class="fab fa-instagram"></i></a>
-
-        <!-- Linkedin -->
-        <a class="btn btn-outline-light btn-floating m-1" href="#!" rel="noopener" role="button"><i
-            class="fab fa-linkedin"></i></a>
-
-        <!-- Github -->
-        <a class="btn btn-outline-light btn-floating m-1" href="#!" rel="noopener" role="button"><i
-            class="fab fa-github"></i></a>
-      </section>
-      <!-- Section: Social media -->

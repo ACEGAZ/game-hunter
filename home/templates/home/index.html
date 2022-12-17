@@ -32,7 +32,7 @@
                     <p class="text-center">
                         Date added: {{ review.date_added }}
                     </p>
-                    {% if user.is_authenticated %}
+                    {% if request.user == review.author %}
                     <div class="row">
                         <div class="col text-center">
                             <a href="{% url 'edit_review' review.id %}" class="text-primary text-center">Edit</a>
