@@ -564,19 +564,48 @@ and if it matches a product then it will be displayed.
 
 
 - Responsive Design <a name="responsive-design"></a>
-
-    The website responds to large, medium and small screen sizes by shrinking the navbar to a burger button and displaying the 
-    comment section in a single column. All elements are sized accordingly using bootstraps containers, rows and column. 
-
-    Below are images of the responsive design as Heroku will not allow the app to connect to a "am I responsive website."
+  <br>
+  <br>
+  The website responds to large, medium and small screen sizes by shrinking the top navbar to a burger button and by stacking the second navbar vertically.
+  <br>
+  <br>
+  The products are dispalyed in rows of 4 on large screens, rows of 3 on medium screens and and a single row on samll screens.
+  <br>
+  <br>
+  The product detail page stacks vertically on small screens. 
+  <br>
+  <br>
+  Below are images of the responsive design as Heroku will not allow the app to connect to a "am I responsive website."
+  <br>
+  <br>
+  <img src = 'static/images/responsive-design-1.png'>
+  <br>
+  <br>
+  <img src = 'static/images/responsive-design-2.png'>
+  <br>
+  <br>
+  <img src = 'static/images/responsive-design-3.png'>
+  <br>
+  <br>
+  <img src = 'static/images/responsive-design-4.png'>
+  <br>
+  <br>
+  <img src = 'static/images/responsive-design-5.png'>
+  <br>
+  <hr>
 
 ## Data Schema <a name="data-schema"></a>
+  <br>
+  <br>
+  <img src = 'static/images/data-schema.png'>
+  <br>
+  <hr>
 
 
 ## Technologies Used <a name="technologies-used"></a>
   For this project the main technologies used were Python, Django, Bootstraps. 
   Python was used as it is required for Django and Django was used to save time when creating databases, authorization, tests, ect. 
-  Cloudinary was used to store static files and images when the website is deployed on Heroku, as Heroku will delete images when the dynos are reset. 
+  AWS was used to store static files and images when the website is deployed on Heroku, as Heroku will delete images when the dynos are reset. 
   Bootstraps was used to enable easy editing of html and css elements so the wesite could be developed faster. 
   
   Along with the above technologies many python modules were installed, the full list can be seen below:
