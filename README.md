@@ -8,42 +8,43 @@ My motivation for this project was my love of all things gaming. I wanted to del
 
 # Table of contents
 1. [Project Description](#project-description)
-    1. [Navigation](#navigation)
-    2. [Landing Page](#landing-page)
-    3. [My Profile](#my-profile)
-    4. [Sign Up](#sign-up)
-    5. [Log In](#log-in)
-    6. [Log Out](#log-out)
-    7. [All Products](#all-products)
-    8. [Games](#games)
+    1. [UX Design](#ux-design)
+    2. [Navigation](#navigation)
+    3. [Landing Page](#landing-page)
+    4. [My Profile](#my-profile)
+    5. [Sign Up](#sign-up)
+    6. [Log In](#log-in)
+    7. [Log Out](#log-out)
+    8. [All Products](#all-products)
+    9. [Games](#games)
        1. [All Games](#all-games)
        2. [PS4](#ps4-games)
        3. [PS5](#ps5-games)
        4. [Xbox One](#xbox-one-games)
        5. [Xbox Series X](#xbox-series-x-games)
        6. [Switch](#switch-games)
-    9. [Consoles](#consoles)
+   10. [Consoles](#consoles)
        1. [All Consoles](#all-consoles)
        2. [PS4](#ps4-consoles)
        3. [PS5](#ps5-consoles)
        4. [Xbox One](#xbox-one-consoles)
        5. [Xbox Series X](#xbox-series-x-consoles)
        6. [Switch](#switch-consoles)
-   10. [Accessories](#accessories)
+   11. [Accessories](#accessories)
        1. [All Accessories](#all-accessories)
        2. [PS4](#ps4-accessories)
        3. [PS5](#ps5-accessories)
        4. [Xbox One](#xbox-one-accessories)
        5. [Xbox Series X](#xbox-series-x-accessories)
        6. [Switch](#switch-accessories)
-    11. [Reviews](#reviews)
-    12. [Footer](#footer)
-    13. [Feedback](#feedback)
-    14. [Product Detail](#product-detail)
-    15. [Loot](#loot)
-    16. [Check Out](#check-out)
-    17. [Add, edit and delete products](#add-edit-and-delete-products)
-    18. [Responsive Design](#responsive-design)
+    12. [Reviews](#reviews)
+    13. [Footer](#footer)
+    14. [Feedback](#feedback)
+    15. [Product Detail](#product-detail)
+    16. [Loot](#loot)
+    17. [Check Out](#check-out)
+    18. [Add, edit and delete products](#add-edit-and-delete-products)
+    19. [Responsive Design](#responsive-design)
 2. [Data Schema](#data-schema)
 3. [Technologies Used](#technologies-used)
 4. [Facebook Page](#facebook-page)
@@ -66,6 +67,11 @@ An admin user is able to add, edit and delete products from the UI with no need 
 
 I decided to go with a black and white colour scheme with a few hints of grey to keep the site easy to read. 
  
+<hr>
+
+## UX Design <a name="ux-design"></a>
+
+<br>
 <hr>
 
 - Navigation <a name="navigation"></a>
@@ -597,6 +603,9 @@ and if it matches a product then it will be displayed.
 ## Data Schema <a name="data-schema"></a>
   <br>
   <br>
+  Below shows how the models correlate to each other and what is contained within each model and what type of field is used.  
+  <br>
+  <br>
   <img src = 'static/images/data-schema.png'>
   <br>
   <hr>
@@ -632,10 +641,70 @@ and if it matches a product then it will be displayed.
   - sqlparse==0.4.3
   - stripe==5.0.0
   - whitenoise==6.2.0
+  <br>
+  <hr>
 
 ## Facebook Page <a name="facebook-page"></a>
+  <br>
+  <br>
+  A Facebook business page was set up for this project and then delete, as to not have a "fake" Facebook business page.
+  The page will be created again if the project goes into real world use. 
+  <br>
+  <br>
+  The page can be seen below.
+  <br>
+  <br>
+  <img src = 'static/images/game-hunter-facebook-1.png'>
+  <br>
+  <br>
+  <img src = 'static/images/game-hunter-facebook-2.png'>
+  <br>
+  <br>
+  <img src = 'static/images/game-hunter-facebook-3.png'>
 
 ## Development <a name="development"></a>
+  <br>
+  <br>
+  Game Hunter was developed using agile methodology and completed in two iterations.
+  A kanban board was used to keep track of user stories and each user story detailed a different function. 
+  <br>
+  <br>
+  Iteration 1 dealt with the core structure of the website, such as basic file structure, html and css elements. 
+  <br>
+  <br>
+  Iteration 2 dealt with all other aspects of the website, such as functionality.
+  <br>
+  <br>
+  The user stories and kanban board can be seen in the images below.
+  <br>
+  <br>
+  <img src = 'static/images/agile-development-1.png'>
+  <br>
+  <br>
+  <img src = 'static/images/agile-development-2.png'>
+  <br>
+  <br>
+  <img src = 'static/images/agile-development-3.png'>
+  <br>
+  <br>
+  <img src = 'static/images/agile-development-4.png'>
+  <br>
+  <br>
+  <img src = 'static/images/agile-development-5.png'>
+  <br>
+  <br>
+  <img src = 'static/images/agile-development-6.png'>
+  <br>
+  <br>
+  <img src = 'static/images/agile-development-7.png'>
+  <br>
+  <br>
+  <img src = 'static/images/agile-development-8.png'>
+  <br>
+  <br>
+  <img src = 'static/images/agile-development-9.png'>
+  <br>
+  <hr>
 
 ## Deployment <a name="deployment"></a>
   
@@ -643,340 +712,344 @@ and if it matches a product then it will be displayed.
   
   1.  I prepared Procfile
   2.  I created the app game-hunter on Heroku 
-  3.  I navigated to the resources tab and added the Heroku postgres add on pack 
-  4.  Then I connected the postgres data base url in my repository
-  5.  On the Heroku website I then navigated to the deployment tab and connect my Github repository to Heroku 
-  6.  I allowed automatic commits so that Heroku would always have the current version of my app 
-  7.  I set up the config vars on the setting tab
-  8.  Then I successfully deployed my app using the deploy branch button. 
+  3.  I created a database on Elephantsql
+  4.  I added the database keys to Heroku config vars and to my env.py file
+  6.  I created a bucket on AWS to hold stiticfiles and added the keys to Heroku config vars and to my env.py file
+  7.  On the Heroku website I then navigated to the deployment tab and connect my Github repository to Heroku 
+  8.  I allowed automatic commits so that Heroku would always have the current version of my app 
+  9.  I set up the config vars on the setting tab
+  10. Then I successfully deployed my app using the deploy branch button. 
 
 <hr>
 
 ## Tests <a name="tests"></a>
 
-- Unit Testing 
-
-  Both automated and manual testing has been performed on this projects. 
-  
-  All automated tests can be found in the tests.py file.
-  
-  unittest tests simple things like urls being resolved.
-
-  <hr> 
-
 - Functional testing 
-
-  Authentication
-
+  <br>
+  <br>
+  Authentication Tests
+  <br>
+  <br>
   Description: 
 
-  Makes sure a user can sign up to the website
+  Makes sure a user can sign up to the website.
 
   Steps:
 
-  1. Navigate to [art-by-heart-sketch](https://art-by-heart-sketch.herokuapp.com/) and click on the sign up link.
-  2. Enter email(optional), username and password.
+  1. Navigate to [game-hunter](https://game-hunter-website.herokuapp.com/) and click on the sign up link in the my account dropdown menu.
+  2. Enter email twice, username and password twice.
   3. Click Sign up.
-  
+  4. Receive verification email and follow link.
+  5. click on the verify and be taken to the log in page
+  <br>
+  <br>
   Expected:
-
-  The users username is displayed in the navbar and they can comment on the gallery page.
-
+  <br>
+  <br>
+  The users is able to create the account and their username is displayed in the my account dropdown menu.
+  <br>
+  <br>
   Actual: 
-
-  The users username is displayed in the navbar.
-
-  <hr>
+  <br>
+  <br>
+  The users is able to create the account and their username is displayed in the my account dropdown menu.
+  <br>
+  <br>
 
   Description: 
 
-  Makes sure a user can log in once they are signed up
+  Makes sure a user can log in once they are signed up.
 
   Steps:
-
-  1. Navigate to [art-by-heart-sketch](https://art-by-heart-sketch.herokuapp.com/) and click on the log in link.
+  <br>
+  <br>
+  1. Navigate to [game-hunter](https://game-hunter-website.herokuapp.com/) and click on the log in link in the my account dropdown menu.
   2. Enter username and password.
   3. Click log in.
-  
+  <br>
+  <br>
   Expected:
-
-  The user to be taken to the home page and their username to be displayed on the navbar.
-
+  <br>
+  <br>
+  The user to be taken to the home page and their username is displayed in the may account dropdown menu.
+  <br>
+  <br>
   Actual: 
+  <br>
+  <br>
+  The user to be taken to the home page and their username is displayed in the may account dropdown menu.
+  <br>
+  <br>
 
-  The user to be taken to the home page and their username to be displayed on the navbar.
+  Description: 
 
-  <hr>
+  Makes sure a user can view their profile once they are logged in.
 
-Description: 
+  Steps:
+  <br>
+  <br>
+  1. Navigate to [game-hunter](https://game-hunter-website.herokuapp.com/) and click on the log in link in the my account dropdown menu.
+  2. Enter username and password.
+  3. Click log in.
+  4. Navigate to my profile 
+  <br>
+  <br>
+  Expected:
+  <br>
+  <br>
+  Be taken to the users profile page and be abel to view default delivery informstion and order history. 
+  <br>
+  <br>
+  Actual: 
+  <br>
+  <br>
+  Be taken to the users profile page and be abel to view default delivery informstion and order history.
+  <br>
+  <br>
+
+  Description: 
 
   Makes sure a user can log out once they are logged in.
 
-  Steps: 
-
-  1. Navigate to [art-by-heart-sketch](https://art-by-heart-sketch.herokuapp.com/) and click on the log out link.
+  Steps:
+  <br>
+  <br>
+  1. Navigate to [game-hunter](https://game-hunter-website.herokuapp.com/) and click on the log out link.
   2. The user is presented with a question asking if they are sure they wish to log out.
   3. Click the log out button. 
-
+  <br>
+  <br>
   Expected: 
-
-  User is redirected to the home page and username no longer visible.
-
+  <br>
+  <br>
+  User is redirected to the home page and user profile name and link no longer visible.
+  <br>
+  <br>
   Actual:
-
-  User is redirected to the home page and username no longer visible.
-
-  <hr>
+  <br>
+  <br>
+  User is redirected to the home page and user profile name and link no longer visible.
+  <br>
+  <br>
 
   Description: 
 
-  Upload Artwork link displayed when logged in as superuser.
+  Makes sure a user can leave a review when logged in.
+
+  Steps:
+  <br>
+  <br>
+  1. Navigate to [game-hunter](https://game-hunter-website.herokuapp.com/) and click on the log in link.
+  2. Navigate to the bottom of the home page and click the add review link. 
+  3. The user is taken to the add review page and can fill in the add review form. 
+  <br>
+  <br>
+  Expected: 
+  <br>
+  <br>
+  User is able to add a review and see it on the home page.
+  <br>
+  <br>
+  Actual:
+  <br>
+  <br>
+  User is able to add a review and see it on the home page.
+  <br>
+  <br>
+
+  Description: 
+
+  Makes sure a user can edit and delete only their own reviews when logged in.
+
+  Steps:
+  <br>
+  <br>
+  1. Navigate to [game-hunter](https://game-hunter-website.herokuapp.com/) and click on the log in link.
+  2. Navigate to the bottom of the home page and click the edit or delete review link. 
+  <br>
+  <br>
+  Expected: 
+  <br>
+  <br>
+  The user is taken to the edit or delete review page and can edit their reveiw or delete it their review.
+  <br>
+  <br>
+  Actual:
+  <br>
+  <br>
+  The user is taken to the edit or delete review page and can edit their reveiw or delete it their review.
+  <br>
+  <br>
+
+  Description: 
+
+  Makes sure a user can set default delivery details.
+
+  Steps:
+  <br>
+  <br>
+  1. Navigate to [game-hunter](https://game-hunter-website.herokuapp.com/) and click on the log in link.
+  2. Navigate to the my profile link in the my account dropdown menu. 
+  3. Fill in default delivery details and click update information.
+  <br>
+  <br>
+  Expected: 
+  <br>
+  <br>
+  Users delivery details are auto completed when making a purchase.
+  <br>
+  <br>
+  Actual:
+  <br>
+  <br>
+  Users delivery details are auto completed when making a purchase.
+  <br>
+  <br>
+
+
+  Superuser Tests
+  <br>
+  <br>
+  Description: 
+  <br>
+  <br>
+  Add product link displayed in my accounts dropdown menu when logged in as superuser.
 
   Steps: 
-
-  1. Navigate to [art-by-heart-sketch](https://art-by-heart-sketch.herokuapp.com/) and click on the log in link.
+  <br>
+  <br>
+  1. Navigate to [game-hunter](https://game-hunter-website.herokuapp.com/) and click on the log in link.
   2. Log in as a superuser.
-  3. The superuser can now see the upload artwork link in the navbar.
-
+  <br>
+  <br>
   Expected: 
-
-  Superuser is now able to see the upload artwork link in the navbar.
-
+  <br>
+  <br>
+  Superuser is now able to see the add products link in the navbar.
+  <br>
+  <br>
   Actual:
+  <br>
+  <br>
+  Superuser is now able to see the add products link in the navbar.
+  <br>
+  <br> 
+   
+  Description: 
 
-  Superuser is now able to see the upload artwork link in the navbar.
-
-  <hr> 
-
-   Description: 
-
-   Upload Artwork link allows a superuser to upload new artwork with a title.
+  Add products to store.
 
   Steps: 
-
-  1. Navigate to [art-by-heart-sketch](https://art-by-heart-sketch.herokuapp.com/) and click on the log in link.
+  <br>
+  <br> 
+  1. Navigate to [game-hunter](https://game-hunter-website.herokuapp.com/) and click on the log in link.
   2. Log in as a superuser.
-  3. The superuser can now see the upload artwork link in the navbar.
-  4. Click the upload artwork link. 
-  5. The superuser is taken to a new page with the title charfield and images selection field.
-  6. The superuser types a title and selcts an image from thier files.
-  7. Click the upload button.
-  8. The superuser is then taken to the gallery page.
-
+  3. The superuser can now see the add product link in the navbar.
+  4. Click the add product link. 
+  5. The superuser is taken to a new page with all fields displayed for adding a product.
+  6. The superuser fills in all needed fields.
+  7. Click the add product button.
+  8. The superuser is then taken to the products page and can see the new product.
+  <br>
+  <br> 
   Expected: 
-
-  The title and image that the superuser has selected is displyed on the Gallery page.
-
+  <br>
+  <br> 
+  The new product is displayed on the products page.
+  <br>
+  <br> 
   Actual:
-
-  The title and image that the superuser has selected is displyed on the Gallery page.
-
-  <hr>
+  <br>
+  <br> 
+  The new product is displayed on the products page.
+  <br>
+  <br> 
 
   Description: 
 
-  Able to see add comment link only when logged in.
+  Edit products in store.
 
   Steps: 
-
-  1. Navigate to [art-by-heart-sketch](https://art-by-heart-sketch.herokuapp.com/) and click on the log in link.
-  2. Log in.
-  3. Navigate to [art-by-heart-sketch](https://art-by-heart-sketch.herokuapp.com/gallery/)
-  4. The user is now able to see the add comment button on the gallery page. 
-
+  <br>
+  <br> 
+  1. Navigate to [game-hunter](https://game-hunter-website.herokuapp.com/) and click on the log in link.
+  2. Log in as a superuser.
+  3. The superuser can now see the edit product link in the products page and product detail page.
+  4. Click the edit product link. 
+  5. The superuser is taken to the edit page and can edit a product.
+  6. The superuser fills in all needed fields.
+  7. Click the edit product button.
+  <br>
+  <br> 
   Expected: 
-
-  User is able to see add comment link.
-
+  <br>
+  <br> 
+  The superuser is then taken to the products page and can see the updated product.
+  <br>
+  <br> 
   Actual:
-
-  User is able to see add comment link.
-
-  <hr>
+  <br>
+  <br> 
+  The superuser is then taken to the products page and can see the updated product.
+  <br>
+  <br> 
 
   Description: 
 
-  User is able to add a comment when logged in.
+  Delete products in store.
 
   Steps: 
-
-  1. Navigate to [art-by-heart-sketch](https://art-by-heart-sketch.herokuapp.com/) and click on the log in link.
-  2. Log in.
-  3. Navigate to [art-by-heart-sketch](https://art-by-heart-sketch.herokuapp.com/gallery/)
-  4. The user is now able to add a comment to a piece of uploaded artwork.  
-
+  <br>
+  <br> 
+  1. Navigate to [game-hunter](https://game-hunter-website.herokuapp.com/) and click on the log in link.
+  2. Log in as a superuser.
+  3. The superuser can now see the delete product link in the products page and product detail page.
+  4. Click the delete product link. 
+  5. The superuser is taken to the delete product page and asked if they are sure they want the product to be deleted..
+  6. Click the delete product button.
+  <br>
+  <br> 
   Expected: 
-
-  User is able to add a comment.
-
+  <br>
+  <br> 
+  The product is removed from the store and can no longer be found.
+  <br>
+  <br> 
   Actual:
+  <br>
+  <br> 
+  The product is removed from the store and can no longer be found.
+  <br>
+  <br> 
 
-  User is able to add a comment.
-
-  <hr>
-
+  Functionality Tests
+  <br>
+  <br>
   Description: 
-
-  User is able to update only their own comments when logged in.
-
-  Steps: 
-
-  1. Navigate to [art-by-heart-sketch](https://art-by-heart-sketch.herokuapp.com/) and click on the log in link.
-  2. Log in.
-  3. Navigate to [art-by-heart-sketch](https://art-by-heart-sketch.herokuapp.com/gallery/)
-  4. The user can now only update comments that they have added.   
-
-  Expected: 
-
-  User is able to update only their own comments.
-
-  Actual:
-
-  User is able to update only their own comments.
-
-  <hr>
-
-   Description: 
-
-  User is able to delete only their own comments when logged in.
+  <br>
+  <br>
+  Able to add products to loot.
 
   Steps: 
-
-  1. Navigate to [art-by-heart-sketch](https://art-by-heart-sketch.herokuapp.com/) and click on the log in link.
-  2. Log in.
-  3. Navigate to [art-by-heart-sketch](https://art-by-heart-sketch.herokuapp.com/gallery/)
-  4. The user can now only delete comments that they have added.   
-
+  <br>
+  <br>
+  1. Navigate to [game-hunter](https://game-hunter-website.herokuapp.com/) and click on any of the all products, games, consoles or accessories links.
+  2. Click on a product.
+  3. click add to loot.
+  <br>
+  <br>
   Expected: 
-
-  User is able to delete only their own comments.
-
+  <br>
+  <br>
+  The product is added to the loot and the total price is updated in the navbar.
+  <br>
+  <br>
   Actual:
-
-  User is able to delete only their own comments.
-
-  <hr>
-
-   Description: 
-
-  User is able to fill in normal commssion form and see success message.
-
-  Steps: 
-
-  1. Navigate to [art-by-heart-sketch](https://art-by-heart-sketch.herokuapp.com/commissions/).
-  2. Fill in the normal commissions form.
-  3. Click submit.
-  4. The user is shown a success message.
-
-  Expected: 
-
-  User is able to fill in normal commissions form and see success message.
-
-  Actual:
-
-  User is able to fill in normal commissions form and see success message.
-
-  <hr>
-
-  Description: 
-
-  User is able to fill in reference sheet form and see success message.
-
-  Steps: 
-
-  1. Navigate to [art-by-heart-sketch](https://art-by-heart-sketch.herokuapp.com/commissions/).
-  2. Fill in the reference sheet form.
-  3. Click submit.
-  4. The user is shown a success message.
-
-  Expected: 
-
-  User is able to fill in reference sheet form and see success message.
-
-  Actual:
-
-  User is able to fill in reference sheet form and see success message.
-
-  <hr>
-
-  Description: 
-
-  User is able to fill in the custom form and see success message.
-
-  Steps: 
-
-  1. Navigate to [art-by-heart-sketch](https://art-by-heart-sketch.herokuapp.com/commissions/).
-  2. Fill in the custom form.
-  3. Click submit.
-  4. The user is shown a success message.
-
-  Expected: 
-
-  User is able to fill in the custom form and see success message.
-
-  Actual:
-
-  User is able to fill in the custom form and see success message.
-
-  <hr>
-
-  Description: 
-
-  The normal commissions form information is received and read through a gmail account.
-
-  Steps: 
-
-  1. Go to [www.gmail.com](https://mail.google.com/mail/).
-  2. Log into account 
-  3. View new email to see if the information has been received.
-
-  Expected: 
-
-  All information filled in on normal commissions form appears in email inbox.
-
-  Actual:
-
-  All information filled in on normal commissions form appears in email inbox.
-
-  <hr>
-
-  Description: 
-
-  The normal reference sheet form information is received and read through a gmail account.
-
-  Steps: 
-
-  1. Go to [www.gmail.com](https://mail.google.com/mail/).
-  2. Log into account 
-  3. View new email to see if the information has been received.
-
-  Expected: 
-
-  All information filled in on reference sheet form appears in email inbox.
-
-  Actual:
-
-  All information filled in on reference sheet form appears in email inbox.
-
-  <hr>
-
-  Description: 
-
-  The normal custom form information is received and read through a gmail account.
-
-  Steps: 
-
-  1. Go to [www.gmail.com](https://mail.google.com/mail/).
-  2. Log into account 
-  3. View new email to see if the information has been received.
-
-  Expected: 
-
-  All information filled in on custom form appears in email inbox.
-
-  Actual:
-
-  All information filled in on custom form appears in email inbox.
+  <br>
+  <br>
+  The product is added to the loot and the total price is updated in the navbar.
+  <br>
+  <br> 
 
 <hr>
 
