@@ -34,7 +34,7 @@
 
   <!-- Mailchimp -->
   <link href="//cdn-images.mailchimp.com/embedcode/classic-071822.css" rel="stylesheet" type="text/css">
-  <style type="text/css">
+  <style>
     #mc_embed_signup {
       background: #343a40;
       font: 14px Helvetica, Arial, sans-serif;
@@ -83,10 +83,10 @@
 
   <system.webServer>
     <staticContent>
-      <remove fileExtension=".woff2"/>
-      <mimeMap fileExtension=".woff2" mimeType="font/woff2"/>
-      <remove fileExtension=".ttf"/>
-      <mimeMap fileExtension=".ttf" mimeType="font/ttf"/>
+      <remove fileExtension=".woff2">
+      <mimeMap fileExtension=".woff2" mimeType="font/woff2">
+      <remove fileExtension=".ttf">
+      <mimeMap fileExtension=".ttf" mimeType="font/ttf">
     </staticContent>
   </system.webServer>
 </head>
@@ -122,6 +122,7 @@
                 <a class="dropdown-item" href="{% url 'account_login' %}">Log In</a>
                 <a class="dropdown-item" href="{% url 'account_signup' %}">Sign Up</a>
                 {% endif %}
+              </div>
             </li>
             <a href="{% url 'bag_view' %}" class="nav-item nav-link text-light">
               <p>
@@ -132,8 +133,9 @@
                 {% endif %}
               </p>
             </a>
-            <a href="{% url 'bag_view' %}"><img id="bag-image" src="{% static 'images/treasure-chest.png' %}" width="40"
+            <a href="{% url 'bag_view' %}"><img id="bag-image" alt="bag-image" src="{% static 'images/treasure-chest.png' %}" width="40"
                 height="40"></a>
+          </ul>
         </div>
       </div>
     </nav>
@@ -167,8 +169,8 @@
                 <a class="dropdown-item" href="{% url 'products' %}?category=Games">All Games</a>
                 <a class="dropdown-item" href="{% url 'products' %}?category=Games&platform=PS4">PS4</a>
                 <a class="dropdown-item" href="{% url 'products' %}?category=Games&platform=PS5">PS5</a>
-                <a class="dropdown-item" href="{% url 'products' %}?category=Games&platform=XBOX ONE">Xbox One</a>
-                <a class="dropdown-item" href="{% url 'products' %}?category=Games&platform=XBOX SERIES X">Xbox series
+                <a class="dropdown-item" href="{% url 'products' %}?category=Games&platform=XBOX%20ONE">Xbox One</a>
+                <a class="dropdown-item" href="{% url 'products' %}?category=Games&platform=XBOX%20SERIES%20X">Xbox series
                   x</a>
                 <a class="dropdown-item" href="{% url 'products' %}?category=Games&platform=SWITCH">Switch</a>
               </div>
@@ -187,8 +189,8 @@
                 <a class="dropdown-item" href="{% url 'products' %}?category=Consoles">All Consoles</a>
                 <a class="dropdown-item" href="{% url 'products' %}?category=Consoles&platform=PS4">PS4</a>
                 <a class="dropdown-item" href="{% url 'products' %}?category=Consoles&platform=PS5">PS5</a>
-                <a class="dropdown-item" href="{% url 'products' %}?category=Consoles&platform=XBOX ONE">Xbox One</a>
-                <a class="dropdown-item" href="{% url 'products' %}?category=Consoles&platform=XBOX SERIES X">Xbox
+                <a class="dropdown-item" href="{% url 'products' %}?category=Consoles&platform=XBOX%20ONE">Xbox One</a>
+                <a class="dropdown-item" href="{% url 'products' %}?category=Consoles&platform=XBOX%20SERIES%20X">Xbox
                   series x</a>
                 <a class="dropdown-item" href="{% url 'products' %}?category=Consoles&platform=SWITCH">Switch</a>
               </div>
@@ -207,9 +209,9 @@
                 <a class="dropdown-item" href="{% url 'products' %}?category=Accessories">All Accessories</a>
                 <a class="dropdown-item" href="{% url 'products' %}?category=Accessories&platform=PS4">PS4</a>
                 <a class="dropdown-item" href="{% url 'products' %}?category=Accessories&platform=PS5">PS5</a>
-                <a class="dropdown-item" href="{% url 'products' %}?category=Accessories&platform=XBOX ONE">Xbox
+                <a class="dropdown-item" href="{% url 'products' %}?category=Accessories&platform=XBOX%20ONE">Xbox
                   One</a>
-                <a class="dropdown-item" href="{% url 'products' %}?category=Accessories&platform=XBOX SERIES X">Xbox
+                <a class="dropdown-item" href="{% url 'products' %}?category=Accessories&platform=XBOX%20SERIES%20X">Xbox
                   series x</a>
                 <a class="dropdown-item" href="{% url 'products' %}?category=Accessories&platform=SWITCH">Switch</a>
               </div>
@@ -249,7 +251,7 @@
             <div class="mc-field-group">
               <label for="mce-EMAIL">Email Address <span class="asterisk">*</span>
               </label>
-              <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" required>
+              <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
               <span id="mce-EMAIL-HELPERTEXT" class="helper_text"></span>
             </div>
             <div id="mce-responses" class="clear foot">
@@ -262,7 +264,7 @@
             <div class="optionalParent">
               <div class="clear foot">
                 <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button text-dark background-color">
-                <p class="brandingLogo"><a href="http://eepurl.com/if26CL"
+                <p class="brandingLogo"><a target="_blank" rel="noopener" href="http://eepurl.com/if26CL"
                     title="Mailchimp - email marketing made easy and fun"><img
                       src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_dark_dtp.svg" alt="mailchimp-image"></a></p>
               </div>

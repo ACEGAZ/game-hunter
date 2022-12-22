@@ -11,5 +11,6 @@ urlpatterns = [
          views.cache_checkout_data, name='cache_checkout_data'),
     path('wh/', webhook, name='webhook'),
     path('feedback/', views.feedback_view, name='feedback'),
-    path('feedback_success/', views.feedback_success_view, name='feedback_success'),
+    path('feedback_success/', views.feedback_success_view,
+         name='feedback_success'),
 ]

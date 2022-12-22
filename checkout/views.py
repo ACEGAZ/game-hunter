@@ -186,7 +186,8 @@ def feedback_view(request):
             messages.success(request, 'Thanks for your feedback')
             return render(request, 'checkout/feedback_success.html')
         else:
-            messages.error(request, 'Failed to upload feedback. Please ensure the form was completed correctly.')
+            messages.error(request, 'Failed to upload feedback. Please ensure\
+                           the form was completed correctly.')
     else:
         form = FeedbackForm()
 

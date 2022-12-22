@@ -89,14 +89,6 @@
             </button>
         </div>
     </form>
-
-    <hr>
-    <div class="container">
-        <div class="row justify-content-center">
-            <a class="text-primary" href="{% url 'products' %}">
-                <h6 class="text-uppercase">Back to store</h6>
-        </div>
-    </div>
 </div>
 <hr>
 {% endblock %}
@@ -107,5 +99,3 @@
 {{ client_secret|json_script:"id_client_secret" }}
 <script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
 {% endblock %}
-
-
