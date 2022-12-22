@@ -58,19 +58,34 @@ My motivation for this project was my love of all things gaming. I wanted to del
 
 
 ## Project Description <a name="project-description"></a>
-
-My project uses a simple, easy to follow layout with drop down links that takes the user to the selected category.
-This allows for very easy navigation. The user can easily find a product using the search bar or by selecting the category.
-Purchases are made easy using stripe and take a few minutes.
-
-An admin user is able to add, edit and delete products from the UI with no need to go to the Django admin panel
-
-I decided to go with a black and white colour scheme with a few hints of grey to keep the site easy to read. 
- 
+<br>
+Game Hunter is B2C online store designed to sell games, console and accessories withing the UK. The store is designed to be easily accessable to users and provide customers with a reliable and affordable products.
+<br>
 <hr>
 
 ## UX Design <a name="ux-design"></a>
-
+<br>
+The user experience is designed to be simple and easy to use. I used a black and white colour theme with hints of grey to keep text easy to read and stylish. 
+<br>
+<br>
+My project uses a simple, easy to follow layout with drop down links that takes the user to the selected category.
+This allows for very easy navigation. The user can easily find a product using the search bar or by selecting the category.
+Purchases are made easy using stripe and take a few minutes.
+<br>
+<br>
+An admin user is able to add, edit and delete products from the UI with no need to go to the Django admin panel and normal users are able to leave reviews. 
+<br>
+<br>
+Below are handrawn wireframes illustrating the basic layout of the website. 
+<br>
+<br>
+<img src = 'static/images/wireframe-1.jpg'>
+<br>
+<br>
+<img src = 'static/images/wireframe-2.jpg'>
+<br>
+<br>
+<img src = 'static/images/wireframe-3.jpg'>
 <br>
 <hr>
 
@@ -1051,75 +1066,132 @@ and if it matches a product then it will be displayed.
   <br>
   <br> 
 
+  Description: 
+  <br>
+  <br>
+  Able to search for products using the search bar.
+
+  Steps: 
+  <br>
+  <br>
+  1. Navigate to [game-hunter](https://game-hunter-website.herokuapp.com/) and click on the search bar.
+  2. Type in the name of a product.
+  <br>
+  <br>
+  Expected: 
+  <br>
+  <br>
+  The product that was searched for appears in the product page.
+  <br>
+  <br>
+  Actual:
+  <br>
+  <br>
+  The product that was searched for appears in the product page.
+  <br>
+  <br> 
+
+  Description: 
+  <br>
+  <br>
+  Able to purchase product from the store.
+
+  Steps: 
+  <br>
+  <br>
+  1. Navigate to [game-hunter](https://game-hunter-website.herokuapp.com/) and click on any of the all products, games, consoles or accessories links.
+  2. Add a product to loot.
+  3. Click the secure checkout button.
+  4. fill in the checkout form.
+  <br>
+  <br>
+  Expected: 
+  <br>
+  <br>
+  The checkout success page is displayed, the order is confirmed and the order can be viewed in the user profile.
+  <br>
+  <br>
+  Actual:
+  <br>
+  <br>
+  The checkout success page is displayed, the order is confirmed and the order can be viewed in the user profile.
+  <br>
+  <br> 
+
+  Description: 
+  <br>
+  <br>
+  Able to sort products using the sort function.
+
+  Steps: 
+  <br>
+  <br>
+  1. Navigate to [game-hunter](https://game-hunter-website.herokuapp.com/) and click on any of the all products, games, consoles or accessories links.
+  2. Use the sort function.
+  <br>
+  <br>
+  Expected: 
+  <br>
+  <br>
+  The products are sorted by the selected field (A to Z), (Z to A), (Price, Low to High) (price, High to Low).
+  <br>
+  <br>
+  Actual:
+  <br>
+  <br>
+  The products are sorted by the selected field (A to Z), (Z to A), (Price, Low to High) (price, High to Low).
+  <br>
+  <br> 
+
 <hr>
 
 ## Validators <a name="validators"></a>
 
 
-### Lighthouse
+ - Lighthouse
 
 
-### WC3 CSS
+ - WC3 CSS
 
 
-### WC3 HTML
+ - WC3 HTML
 
 
-### PEP8
+ - PEP8
 
 
 ## Bugs & Solutions <a name="bugs-&-solutions"></a> 
+<br>
+<br>
+There were no major bugs during the development of this project.
+<hr> 
 
 
 ## Updates <a name="updates"></a>
-
+<br>
+I would like to include a function to estimate the delivery time for customer orders.
+<br>
+<br>
+I would also like to add product reviews in a future update.
+<hr>
 
 ## Credits <a name="credits"></a>
-
+<br>
 Special thanks to Daisy McGirr for mentoring me throughout this project.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-DO NOT DELETE
-
-background image source
+<br>
+<br>
+The background image was taken from
 https://arstechnica.com/gaming/2020/12/ars-technicas-best-games-of-2020/
+<br>
+<br>
+All product images were taken from https://www.amazon.co.uk/
+<hr>
+
+
+
+
+
+DO NOT DELETE until project is finished
 
 removing products from bag not displaying toasts 
 
