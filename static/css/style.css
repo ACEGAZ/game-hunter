@@ -1,7 +1,8 @@
+/* body */
 body {
     background-color: black;
 }
-
+/* nav-bar */
 #brand {
     padding-left: 0;
     padding-right: 0;
@@ -19,10 +20,11 @@ body {
     background-color: white;
 }
 
+/* search bar */
 .search-bar {
     border-radius: 0;
 }
-
+/* pulse for second nav-bar */
 .pulse:hover {
     animation: pulse 1s infinite;
     animation-timing-function: linear;
@@ -41,16 +43,16 @@ body {
         transform: scale(1);
     }
 }
-
+/* backgrond image */
 #background-image {
     height: 100%;
     width: 100%;
 }
-
+/* bag image */
 #bag-image {
     margin-left: 8px;
 }
-
+/* toasts */
 .message-container {
     position: fixed;
     top: 0px;
@@ -58,11 +60,12 @@ body {
     z-index: 999999999;
 }
 
-
+/*  */
 #submit-button:hover span {
     text-decoration: underline;
 }
 
+/* stripe */
 .StripeElement,
 .stripe-style-input {
     box-sizing: border-box;
@@ -101,20 +104,24 @@ body {
     border: 1px solid #000;
 }
 
+/* underline profile button */
 #profile-update-button:hover {
     text-decoration: underline;
 }
 
+/* oreder history */
 .order-history {
     max-height: 416px;
     overflow-y: auto;
 }
 
+/* underline link */
 .add-products-submit:hover {
     text-decoration: underline;
     opacity:0.6
 }
 
+/* change cursor to pointer on remive link */
 #remove-item-link:hover {
 cursor: pointer;
 }

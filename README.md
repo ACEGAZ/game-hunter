@@ -44,7 +44,8 @@ My motivation for this project was my love of all things gaming. I wanted to del
     16. [Loot](#loot)
     17. [Check Out](#check-out)
     18. [Add, edit and delete products](#add-edit-and-delete-products)
-    19. [Responsive Design](#responsive-design)
+    19. [Error 404](#error-404)
+    20. [Responsive Design](#responsive-design)
 2. [Data Schema](#data-schema)
 3. [Technologies Used](#technologies-used)
 4. [Facebook Page](#facebook-page)
@@ -583,6 +584,15 @@ and if it matches a product then it will be displayed.
   <br>
   <hr>
 
+- Error 404 <a name="error-404"></a>
+  <br>
+  <br>
+  If a user tries to access a url that is not part of the website they are taken to the error 404 page.
+  <br>
+  <br>
+  <img src = 'static/images/error-404-page.png'>
+  <br>
+  <hr>
 
 - Responsive Design <a name="responsive-design"></a>
   <br>
@@ -726,14 +736,22 @@ and if it matches a product then it will be displayed.
   The Game Hunter website was deployed on Heroku using the following steps:
   
   1.  I prepared Procfile
-  2.  I created the app game-hunter on Heroku 
-  3.  I created a database on Elephantsql
-  4.  I added the database keys to Heroku config vars and to my env.py file
-  6.  I created a bucket on AWS to hold stiticfiles and added the keys to Heroku config vars and to my env.py file
-  7.  On the Heroku website I then navigated to the deployment tab and connect my Github repository to Heroku 
-  8.  I allowed automatic commits so that Heroku would always have the current version of my app 
-  9.  I set up the config vars on the setting tab
-  10. Then I successfully deployed my app using the deploy branch button. 
+  2.  I created the game-hunter game hunter on Heroku 
+  4.  I installed dj_database_url and psycopg2 in my project
+  5.  I used pip freeze > requirements.txt to place all installed packages in the requirements.txt folder
+  6.  I imported dj_database_url to settings.py
+  7.  I configured the database in settings.py to use the dj_database
+  8.  I made migrations using python3 manage.py makemigrations and python3 manage.py migrate 
+  9.  I created a database on Elephantsql
+  10.  I created a bucket on AWS to hold stiticfiles with groups, policies and users
+  11.  I created a stripe account for payments. 
+  12.  I added AWS_ACCESS_KEY, AWS_SECRET_ACCESS_KEY, DATABASE_URL, DISABLE_COLLECTSTATIC, EMAIL_HOST_PASS,
+      EMAIL_HOST_USER, HEROKU_POSTGRESQL_IVORY_URL, SECRET_KEY, STRIPE_PUBLIC_KEY, STRIPE_SECRET_KEY,
+      STRIPE_WH_SECRET, USE_AWS to my Heroku config vars. 
+  13.  I configured my settings.py to include all keys from env.py
+  14.  On the Heroku website I then navigated to the deployment tab and connect my Github repository to Heroku 
+  15.  I allowed automatic commits so that Heroku would always have the current version of my app 
+  16. Then I successfully deployed my app using the deploy branch button. 
 
 <hr>
 
@@ -1149,7 +1167,11 @@ and if it matches a product then it will be displayed.
 
 
  - Lighthouse
-
+  <br>
+  <br>
+  <img src = 'static/images/.png'>
+  <br>
+  <br>
 
  - WC3 CSS
 
@@ -1163,7 +1185,11 @@ and if it matches a product then it will be displayed.
 ## Bugs & Solutions <a name="bugs-&-solutions"></a> 
 <br>
 <br>
-There were no major bugs during the development of this project.
+Removing products from loot is currently not displaying toasts.
+<br>
+<br>
+Webhooks are currently displaying an unauthorised status code and as a result order confiramtion emails are not being sent, 
+because they are handeled by StripeWebhookHandler in webhook_handler.py and the order confirmation email only happens after a successful webhook is received. The toast stating that a order confirmation has been sent is still active. 
 <hr> 
 
 
@@ -1195,8 +1221,4 @@ DO NOT DELETE until project is finished
 
 doc strings for all functions
 
-removing products from bag not displaying toasts 
 
-Webhooks not working (401 (Unauthorized))
-
-update button on bag not working
