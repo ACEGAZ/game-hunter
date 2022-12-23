@@ -1193,6 +1193,8 @@ All product images were taken from https://www.amazon.co.uk/
 
 DO NOT DELETE until project is finished
 
+doc strings for all functions
+
 removing products from bag not displaying toasts 
 
 Webhooks not working (401 (Unauthorized))

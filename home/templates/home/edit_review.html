@@ -9,20 +9,21 @@
     </div>
     <hr>
     <div class="row text-light justify-content-center">
-        <form class="form w-50 text-center" action="{% url 'edit_review' review.id  %}" method="POST" 
-        enctype="multipart/form-data">
+        <form class="form w-50 text-center" action="{% url 'edit_review' review.id  %}" method="POST"
+            enctype="multipart/form-data">
             {% csrf_token %}
             {{ form | crispy }}
-                <div class="row">
-                    <div class="col">
-                        <button class="text-danger btn btn-black btn-lg">
+            <div class="row">
+                <div class="col">
+                    <button class="text-danger btn btn-black btn-lg">
                         <a href="{% url 'home' %}" class="text-danger justify-content-end">Cancel</a>
                     </button>
-                    </div>
-                    <div class="col text-danger justify-content-start mb-5">
-                        <button value="submit" type="submit" class="text-primary btn btn-black btn-lg add-products-submit">Update Review</button>
-                    </div>
                 </div>
+                <div class="col text-danger justify-content-start mb-5">
+                    <button value="submit" type="submit"
+                        class="text-primary btn btn-black btn-lg add-products-submit">Update Review</button>
+                </div>
+            </div>
         </form>
     </div>
 </div>

@@ -4,10 +4,10 @@
 {% block content %}
 <!--image-->
 
-  <div class="overlay"></div>
-  <div class="container-fluid text-light">
-      <div class="row">
-          <div class="col text-center mt-3">
+<div class="overlay"></div>
+<div class="container-fluid text-light">
+    <div class="row">
+        <div class="col text-center mt-3">
             <!--Games h2-->
             {% if '/products/?category=Games&platform=PS4' in request.get_full_path %}
             <h2 style="color:rgb(4, 0, 255);">PS4 Games</h2>
@@ -54,88 +54,98 @@
             <h2>All Accessories</h2>
             {% else %}
             <h2>All Products</h2>
-            {% endif %}  
-              <hr class="w-50 mb-1">
-          </div>
-      </div>
-      <div class="row">
-          <div class="product-container col-10 offset-1">
-              <div class="row mt-1 mb-2">
-                  <div class="col-12 col-md-6 my-auto order-md-last d-flex justify-content-center justify-content-md-end">
-                      <div class="sort-select-wrapper w-50">
-                          <select id="sort-selector" class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
-                              <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
-                              <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
-                              <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high to low)</option>
-                              <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Name (A-Z)</option>
-                              <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>Name (Z-A)</option>
-                          </select>
-                      </div>
-                  </div>
-                  <div class="col-12 col-md-6 order-md-first">
-                      <p class="text-light mt-3 text-center text-md-left">
-                          {% if search_term or current_categories or current_sorting != 'None_None' %}
-                              <span class="small"><a href="{% url 'products' %}" class="text-primary">Products Home</a> | </span>
-                          {% endif %}
-                          {{ products|length }} Products{% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
-                      </p>
-                  </div>
-              </div>
+            {% endif %}
+            <hr class="w-50 mb-1">
+        </div>
+    </div>
+    <div class="row">
+        <div class="product-container col-10 offset-1">
+            <div class="row mt-1 mb-2">
+                <div class="col-12 col-md-6 my-auto order-md-last d-flex justify-content-center justify-content-md-end">
+                    <div class="sort-select-wrapper w-50">
+                        <select id="sort-selector"
+                            class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
+                            <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...
+                            </option>
+                            <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price
+                                (low to high)</option>
+                            <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price
+                                (high to low)</option>
+                            <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Name
+                                (A-Z)</option>
+                            <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>Name
+                                (Z-A)</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 order-md-first">
+                    <p class="text-light mt-3 text-center text-md-left">
+                        {% if search_term or current_categories or current_sorting != 'None_None' %}
+                        <span class="small"><a href="{% url 'products' %}" class="text-primary">Products Home</a> |
+                        </span>
+                        {% endif %}
+                        {{ products|length }} Products{% if search_term %} found for
+                        <strong>"{{ search_term }}"</strong>{% endif %}
+                    </p>
+                </div>
+            </div>
 
-              <div class="row">
+            <div class="row">
                 {% for product in products %}
-                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                        <div class="card h-100 border-0">
-                            <a href="{% url 'product_detail' product.id %}">
-                                <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
-                            </a>
-                            <br>
-                            <div class="card-footer bg-white pt-0 border-0 text-left text-dark">
-                                <div class="row">
-                                    <div class="col">
-                                        <hr>
-                                        <p class="lead mb-0 text-left font-weight-bold">£{{ product.price }}</p>
-                                        <hr>
-                                        <p class="lead mb-0 text-left font-weight-bold">Platform: {{ product.platform }}</p>
-                                        {% if product.category %}
-                                        <p class="small mt-1 mb-0">
-                                            <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
-                                                <i class="fas fa-tag mr-1"></i>{{ product.name }}
-                                            </a>
-                                        </p>
-                                        
-                                        {% endif %}
-                                        {% if request.user.is_superuser %}
-                                            <small class="ml-3">
-                                                <a href="{% url 'edit_products' product.id %}">Edit</a> | 
-                                                <a href="{% url 'delete_products_confirmation' product.id %}" class="text-danger" >Delete</a>
-                                            </small>
-                                        {% endif %}
-                                    </div>
+                <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                    <div class="card h-100 border-0">
+                        <a href="{% url 'product_detail' product.id %}">
+                            <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+                        </a>
+                        <br>
+                        <div class="card-footer bg-white pt-0 border-0 text-left text-dark">
+                            <div class="row">
+                                <div class="col">
+                                    <hr>
+                                    <p class="lead mb-0 text-left font-weight-bold">£{{ product.price }}</p>
+                                    <hr>
+                                    <p class="lead mb-0 text-left font-weight-bold">Platform: {{ product.platform }}</p>
+                                    {% if product.category %}
+                                    <p class="small mt-1 mb-0">
+                                        <a class="text-muted"
+                                            href="{% url 'products' %}?category={{ product.category.name }}">
+                                            <i class="fas fa-tag mr-1"></i>{{ product.name }}
+                                        </a>
+                                    </p>
+
+                                    {% endif %}
+                                    {% if request.user.is_superuser %}
+                                    <small class="ml-3">
+                                        <a href="{% url 'edit_products' product.id %}">Edit</a> |
+                                        <a href="{% url 'delete_products_confirmation' product.id %}"
+                                            class="text-danger">Delete</a>
+                                    </small>
+                                    {% endif %}
                                 </div>
                             </div>
                         </div>
                     </div>
-                    {% if forloop.counter|divisibleby:1 %}
-                        <div class="col-12 d-sm-none mb-5">
-                            <hr>
-                        </div>
-                    {% endif %}                        
-                    {% if forloop.counter|divisibleby:2 %}
-                        <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
-                            <hr>
-                        </div>
-                    {% endif %}
-                    {% if forloop.counter|divisibleby:3 %}
-                        <div class="col-12 d-none d-lg-block d-xl-none mb-5">
-                            <hr>
-                        </div>
-                    {% endif %}
-                    {% if forloop.counter|divisibleby:4 %}
-                        <div class="col-12 d-none d-xl-block mb-5">
-                            <hr>
-                        </div>
-                    {% endif %}
+                </div>
+                {% if forloop.counter|divisibleby:1 %}
+                <div class="col-12 d-sm-none mb-5">
+                    <hr>
+                </div>
+                {% endif %}
+                {% if forloop.counter|divisibleby:2 %}
+                <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
+                    <hr>
+                </div>
+                {% endif %}
+                {% if forloop.counter|divisibleby:3 %}
+                <div class="col-12 d-none d-lg-block d-xl-none mb-5">
+                    <hr>
+                </div>
+                {% endif %}
+                {% if forloop.counter|divisibleby:4 %}
+                <div class="col-12 d-none d-xl-block mb-5">
+                    <hr>
+                </div>
+                {% endif %}
                 {% endfor %}
             </div>
         </div>
@@ -144,18 +154,18 @@
 <hr>
 
 <script type="text/javascript">
-    $('.btt-link').click(function(e) {
-        window.scrollTo(0,0)
+    $('.btt-link').click(function (e) {
+        window.scrollTo(0, 0)
     })
 </script>
 
 <script type="text/javascript">
-    $('#sort-selector').change(function() {
+    $('#sort-selector').change(function () {
         var selector = $(this);
         var currentUrl = new URL(window.location);
 
         var selectedVal = selector.val();
-        if(selectedVal != "reset"){
+        if (selectedVal != "reset") {
             var sort = selectedVal.split("_")[0];
             var direction = selectedVal.split("_")[1];
 
@@ -171,4 +181,4 @@
         }
     })
 </script>
-{% endblock %}          
+{% endblock %}

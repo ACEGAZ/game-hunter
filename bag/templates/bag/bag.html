@@ -36,17 +36,14 @@
                 <td class="mt-5 text-center">
                     <form class="form update-form" method="POST" action="{% url 'adjust_bag' item.item_id %}">
                         {% csrf_token %}
-                        <input class="form-control form-control-sm qty_input text-center" type="number"
-                        name="quantity" value="{{ item.quantity }}" min="1" max="99"
-                        data-item_id="{{ item.item_id }}"
-                        id="id_qty_{{ item.item_id }}">
+                        <input class="form-control form-control-sm qty_input text-center" type="number" name="quantity"
+                            value="{{ item.quantity }}" min="1" max="99" data-item_id="{{ item.item_id }}"
+                            id="id_qty_{{ item.item_id }}">
+                        <button type="submit" value="submit"
+                            class="btn text-primary add-products-submit"><small>Update</small></button>
                     </form>
-                    <div class="row-12">
-                        <a class="update-link text-primary"><small>Update</small></a>
-                    </div>
-                    <div class="row-12">
-                        <a class="remove-item text-danger" id="remove_{{ item.item_id }}"><small>Remove</small>
-                    </div>
+                    <button class="remove-item text-danger btn add-products-submit"
+                    id="remove_{{ item.item_id }}"><small>Remove</small></button>
                 </td>
             </tr>
             {% endfor %}
@@ -76,10 +73,9 @@
 
 {% block postloadjs %}
 {{ block.super }}
-<script type="text/javascript">
-
-// update qty
-$('.update-link').click(function (e) {
+<script>
+    // update qty
+    $('.update-link').click(function (e) {
         var form = $(this).prev('.update-form');
         form.submit();
     })
@@ -100,14 +96,14 @@ $('.update-link').click(function (e) {
             });
     })
 
-const numInputs = document.querySelectorAll('input[type=number]')
+    const numInputs = document.querySelectorAll('input[type=number]')
 
-numInputs.forEach(function(input) {
-  input.addEventListener('change', function(e) {
-    if (e.target.value == '') {
-      e.target.value = 0
-    }
-  })
-})
+    numInputs.forEach(function (input) {
+        input.addEventListener('change', function (e) {
+            if (e.target.value == '') {
+                e.target.value = 0
+            }
+        })
+    })
 </script>
 {% endblock %}

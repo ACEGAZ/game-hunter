@@ -49,15 +49,15 @@
         <hr>
         {% endfor %}
     </div>
-</div>  
+</div>
 <hr>
 {% if user.is_authenticated %}
 <div class="container">
     <div class="row justify-content-center">
         <h4><a href="{% url 'add_review' %}">Add a review</a></h4>
         {% else %}
-        <h4 class="text-light text-center">Please <a class="text-primary" href="{% url 'account_login' %}">Log In</a> or <a class="text-primary"
-                href="{% url 'account_signup' %}">Sign Up</a> to leave a review</h4>
+        <h4 class="text-light text-center">Please <a class="text-primary" href="{% url 'account_login' %}">Log In</a> or
+            <a class="text-primary" href="{% url 'account_signup' %}">Sign Up</a> to leave a review</h4>
         {% endif %}
     </div>
     <hr>
