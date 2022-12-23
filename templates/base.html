@@ -1,6 +1,6 @@
 {% load static %}
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -145,7 +145,7 @@
             </li>
           </ul>
         </div>
-
+<!-- games -->
         <div class="navbar-collapse justify-content-center" id="navbarNavDropdown">
           <ul class="navbar-nav">
             <li class="nav-item dropdown">
@@ -166,7 +166,7 @@
             </li>
           </ul>
         </div>
-
+<!-- consoles -->
         <div class="navbar-collapse justify-content-center">
           <ul class="navbar-nav">
             <li class="nav-item dropdown">
@@ -186,7 +186,7 @@
             </li>
           </ul>
         </div>
-
+<!-- accessories -->
         <div class="navbar-collapse justify-content-center">
           <ul class="navbar-nav">
             <li class="nav-item dropdown">
@@ -211,7 +211,7 @@
       </nav>
     </div>
   </div>
-
+<!-- search bar -->
   <form method="GET" action="{% url 'products' %}">
     <div class="input-group mb-3">
       <input class="form-control search-bar" type="search" placeholder="Search" aria-label="Search" name="q">
@@ -305,8 +305,8 @@
   <script>
     $('.toast').toast('show');
   </script>
-  <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
-  <script type='text/javascript'>
+  <script src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
+  <script>
     (function ($) {
       window.fnames = new Array();
       window.ftypes = new Array();
