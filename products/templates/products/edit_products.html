@@ -17,20 +17,20 @@
             {% csrf_token %}
             {{ form | crispy }}
     </div>
-        <div class="row">
-            <div class="col text-right">
-                <button class="text-danger btn btn-black btn-lg">
-                    <a href="{% url 'home' %}" class="text-danger justify-content-end">Cancel</a>
-                </button>
-            </div>
-            <div class="col text-danger justify-content-start mb-5">
-                <button value="submit" type="submit" class="text-primary btn btn-black btn-lg add-products-submit">Update
-                    Product
-                </button>
-            </div>
+    <div class="row">
+        <div class="col text-right">
+            <button class="text-danger btn btn-black btn-lg">
+                <a href="{% url 'home' %}" class="text-danger justify-content-end">Cancel</a>
+            </button>
         </div>
-        </form>
+        <div class="col text-danger justify-content-start mb-5">
+            <button value="submit" type="submit" class="text-primary btn btn-black btn-lg add-products-submit">Update
+                Product
+            </button>
+        </div>
     </div>
+    </form>
 </div>
+
 
 {% endblock %}
