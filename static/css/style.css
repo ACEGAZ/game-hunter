@@ -1,6 +1,6 @@
 /* body */
 body {
-    background-color: black;
+    background-color: rgb(8, 8, 8);
 }
 /* nav-bar */
 #brand {
@@ -47,6 +47,7 @@ body {
 #background-image {
     height: 100%;
     width: 100%;
+    image-resolution: 300dpi;
 }
 /* bag image */
 #bag-image {

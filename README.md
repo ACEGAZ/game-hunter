@@ -1183,6 +1183,10 @@ and if it matches a product then it will be displayed.
  - WC3 HTML
   <br>
   <br>
+  The html validator is showing two stray end tags on div's, I have been through the entire project several times and cannot find the two stray end div's.
+  Also, other validators do not show these errors. 
+  <br>
+  <br>
   <img src = 'static/images/html-validator.png'>
   <br>
   <br>
@@ -1228,13 +1232,3 @@ https://arstechnica.com/gaming/2020/12/ars-technicas-best-games-of-2020/
 <br>
 All product images were taken from https://www.amazon.co.uk/
 <hr>
-
-
-
-
-
-DO NOT DELETE until project is finished
-
-doc strings for all functions
-
-
