@@ -2,6 +2,10 @@ from django.conf import settings
 from django.shortcuts import render, redirect, get_object_or_404
 from products.models import Products
 
+"""
+holds bag items and calculates price
+"""
+
 
 def bag_contents(request):
 

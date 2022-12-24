@@ -1169,18 +1169,34 @@ and if it matches a product then it will be displayed.
  - Lighthouse
   <br>
   <br>
-  <img src = 'static/images/.png'>
+  <img src = 'static/images/lighthouse-validator.png'>
   <br>
   <br>
 
  - WC3 CSS
-
+  <br>
+  <br>
+  <img src = 'static/images/css-validator.png'>
+  <br>
+  <br>
 
  - WC3 HTML
-
+  <br>
+  <br>
+  <img src = 'static/images/html-validator.png'>
+  <br>
+  <br>
 
  - PEP8
-
+  <br>
+  <br>
+  PEP8
+  Game Hunter was pep8 validated using gitpods built in pep8 module.
+  <br>
+  <br>
+  The only issues I could not fix were lines being too long. I tried to fix these using "\" syntax but this caused errors.
+  <br>
+  <hr>
 
 ## Bugs & Solutions <a name="bugs-&-solutions"></a> 
 <br>

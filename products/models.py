@@ -10,6 +10,9 @@ SWITCH = 'SWITCH'
 
 
 class Categories(models.Model):
+    """
+    a model to add categories
+    """
     name = models.CharField(max_length=254)
 
     class Meta:
@@ -20,6 +23,9 @@ class Categories(models.Model):
 
 
 class Products(models.Model):
+    """
+    a model to add new products
+    """
     PLATFORM_CHOICES = (
                        (PS4, "PS4"),
                        (PS5, "PS5"),
